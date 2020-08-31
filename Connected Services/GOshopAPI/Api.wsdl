@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://goshop.pl/soapapi" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://goshop.pl/soapapi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GOshop</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://goshop.pl/soapapi">
+      <s:element name="FeatureAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="featureName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FeatureAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FeatureAddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DictionaryAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="featureId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dictionaryValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DictionaryAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DictionaryAddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FeaturesAndDictionariesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="FeaturesAndDictionariesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FeaturesAndDictionariesListResult" type="tns:ArrayOfProductFeature" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductFeature">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductFeature" nillable="true" type="tns:ProductFeature" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductFeature">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Dictionaries" type="tns:ArrayOfProductFeatureDictionary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeatureName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FeatureId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductFeatureDictionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductFeatureDictionary" nillable="true" type="tns:ProductFeatureDictionary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductFeatureDictionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FeatureName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DictionaryValue" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FeatureId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DictionaryId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CategoryAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoryAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryAddResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoryTreeList">
+        <s:complexType />
+      </s:element>
+      <s:element name="CategoryTreeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryTreeListResult" type="tns:ArrayOfProductCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductCategory" nillable="true" type="tns:ProductCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ParentId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCategoryName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductCategoryId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProductToCategoryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:CategoryToProductQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CategoryToProductQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProductToCategoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductToCategoryListResult" type="tns:ArrayOfProductToCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductToCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductToCategory" nillable="true" type="tns:ProductToCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductToCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DescriptionsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:DescriptionQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DescriptionQuery">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductId" type="tns:ArrayOfInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DescriptionsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescriptionsListResult" type="tns:ArrayOfProductDescription" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductDescription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductDescription" nillable="true" type="tns:ProductDescription" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductDescription">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullHtmlDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ImagesList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:ImageQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImageQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductId" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ImagesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImagesListResult" type="tns:ArrayOfProductImage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductImage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductImage" nillable="true" type="tns:ProductImage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductImage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PictureId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourceImageHash" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ImageAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="imageBytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="hash" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImageAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImageAddResult" type="tns:ProductImage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescriptionAddOrUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fullHtmlDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescriptionAddOrUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OptionsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:OptionQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OptionQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeOptionDictionaries" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OptionsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptionsListResult" type="tns:ArrayOfProductOption" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductOption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductOption" nillable="true" type="tns:ProductOption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductOption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Dictionaries" type="tns:ArrayOfProductFeatureDictionary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatalogPriceGross" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceGross" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddBasicOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:OptionAddRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OptionAddRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatalogPriceGross" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceGross" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddBasicOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddBasicOptionResult" type="tns:ProductOption" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVariantOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:OptionAddRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="dictionaryIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVariantOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddVariantOptionResult" type="tns:ProductOption" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptionsStockAndPriceUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestBatch" type="tns:ArrayOfOptionUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOptionUpdateRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OptionUpdateRequest" nillable="true" type="tns:OptionUpdateRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OptionUpdateRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateById" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpdateByEAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpdateBySKU" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stock" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceGross" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatalogPriceGross" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OptionsStockAndPriceUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OptionsStockAndPriceUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="optionIdToRemove" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveOptionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:ProductQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProducerId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeProductImages" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeProductOptions" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProductsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductsListResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProducerId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Producer" type="tns:ProductProducer" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImagesList" type="tns:ArrayOfProductImage" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionsList" type="tns:ArrayOfProductOption" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailabilityState" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductProducer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProducerId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProducerName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProductAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="tns:ProductAddStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductAddStruct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProducerId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxRate" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullHtmlDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryId" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProductAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductAddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productUpdateBatch" type="tns:ArrayOfProductUpdateStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductUpdateStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductUpdateStruct" nillable="true" type="tns:ProductUpdateStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductUpdateStruct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryId" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="RemoveCategoryId" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProductUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProducersList">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProducersListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProducersListResult" type="tns:ArrayOfProductProducer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductProducer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductProducer" nillable="true" type="tns:ProductProducer" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProducerAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProducerAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProducerAddResult" type="tns:ArrayOfProductProducer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrdersList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:OrderQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HaveShippingNumber" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HaveOuterSystemId" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedLaterThan" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedSoonerThan" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="InStateId" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="WithOuterSystemId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrdersListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdersListResult" type="tns:ArrayOfOrder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Order">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfOrderItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Payment" type="tns:PaymentDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="Delivery" type="tns:DeliveryDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="OuterSystemId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingDocumentType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingTaxIdentifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingSecondName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddres2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingAddres3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderWeight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PickupPointJSON" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNotes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderPaymentBalance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipmentPriceGross" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="tns:OrderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EAN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitWeight" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalWeight" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitPriceGross" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPriceGross" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeliveryDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DeliveryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrdersStatesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="OrdersStatesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdersStatesListResult" type="tns:ArrayOfOrderState" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrderState">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderState" nillable="true" type="tns:OrderState" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderState">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockActionType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrderUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateRequest" type="tns:OrderUpdateQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderUpdateQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewStateId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewShippingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewOuterSystemID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrderUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrderUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FeatureAddSoapIn">
+    <wsdl:part name="parameters" element="tns:FeatureAdd" />
+  </wsdl:message>
+  <wsdl:message name="FeatureAddSoapOut">
+    <wsdl:part name="parameters" element="tns:FeatureAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryAddSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryAdd" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryAddSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="FeaturesAndDictionariesListSoapIn">
+    <wsdl:part name="parameters" element="tns:FeaturesAndDictionariesList" />
+  </wsdl:message>
+  <wsdl:message name="FeaturesAndDictionariesListSoapOut">
+    <wsdl:part name="parameters" element="tns:FeaturesAndDictionariesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoryAddSoapIn">
+    <wsdl:part name="parameters" element="tns:CategoryAdd" />
+  </wsdl:message>
+  <wsdl:message name="CategoryAddSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoryAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoryTreeListSoapIn">
+    <wsdl:part name="parameters" element="tns:CategoryTreeList" />
+  </wsdl:message>
+  <wsdl:message name="CategoryTreeListSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoryTreeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductToCategoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductToCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="ProductToCategoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductToCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescriptionsListSoapIn">
+    <wsdl:part name="parameters" element="tns:DescriptionsList" />
+  </wsdl:message>
+  <wsdl:message name="DescriptionsListSoapOut">
+    <wsdl:part name="parameters" element="tns:DescriptionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImagesListSoapIn">
+    <wsdl:part name="parameters" element="tns:ImagesList" />
+  </wsdl:message>
+  <wsdl:message name="ImagesListSoapOut">
+    <wsdl:part name="parameters" element="tns:ImagesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImageAddSoapIn">
+    <wsdl:part name="parameters" element="tns:ImageAdd" />
+  </wsdl:message>
+  <wsdl:message name="ImageAddSoapOut">
+    <wsdl:part name="parameters" element="tns:ImageAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescriptionAddOrUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:DescriptionAddOrUpdate" />
+  </wsdl:message>
+  <wsdl:message name="DescriptionAddOrUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:DescriptionAddOrUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptionsListSoapIn">
+    <wsdl:part name="parameters" element="tns:OptionsList" />
+  </wsdl:message>
+  <wsdl:message name="OptionsListSoapOut">
+    <wsdl:part name="parameters" element="tns:OptionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBasicOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBasicOption" />
+  </wsdl:message>
+  <wsdl:message name="AddBasicOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBasicOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddVariantOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddVariantOption" />
+  </wsdl:message>
+  <wsdl:message name="AddVariantOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddVariantOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptionsStockAndPriceUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:OptionsStockAndPriceUpdate" />
+  </wsdl:message>
+  <wsdl:message name="OptionsStockAndPriceUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:OptionsStockAndPriceUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveOptions" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsList" />
+  </wsdl:message>
+  <wsdl:message name="ProductsListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductAddSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductAdd" />
+  </wsdl:message>
+  <wsdl:message name="ProductAddSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ProductUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProducersListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProducersList" />
+  </wsdl:message>
+  <wsdl:message name="ProducersListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProducersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProducerAddSoapIn">
+    <wsdl:part name="parameters" element="tns:ProducerAdd" />
+  </wsdl:message>
+  <wsdl:message name="ProducerAddSoapOut">
+    <wsdl:part name="parameters" element="tns:ProducerAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersListSoapIn">
+    <wsdl:part name="parameters" element="tns:OrdersList" />
+  </wsdl:message>
+  <wsdl:message name="OrdersListSoapOut">
+    <wsdl:part name="parameters" element="tns:OrdersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersStatesListSoapIn">
+    <wsdl:part name="parameters" element="tns:OrdersStatesList" />
+  </wsdl:message>
+  <wsdl:message name="OrdersStatesListSoapOut">
+    <wsdl:part name="parameters" element="tns:OrdersStatesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderUpdate" />
+  </wsdl:message>
+  <wsdl:message name="OrderUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GOshopAPISoap">
+    <wsdl:operation name="FeatureAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds new feature (group of dictionaries), returns featureId</wsdl:documentation>
+      <wsdl:input message="tns:FeatureAddSoapIn" />
+      <wsdl:output message="tns:FeatureAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds new dictionary value to feature, returns dictionary Id</wsdl:documentation>
+      <wsdl:input message="tns:DictionaryAddSoapIn" />
+      <wsdl:output message="tns:DictionaryAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FeaturesAndDictionariesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets full struct (features + dictionaries)</wsdl:documentation>
+      <wsdl:input message="tns:FeaturesAndDictionariesListSoapIn" />
+      <wsdl:output message="tns:FeaturesAndDictionariesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CategoryAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add new category, returns db id (int) if success</wsdl:documentation>
+      <wsdl:input message="tns:CategoryAddSoapIn" />
+      <wsdl:output message="tns:CategoryAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CategoryTreeList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of all categories</wsdl:documentation>
+      <wsdl:input message="tns:CategoryTreeListSoapIn" />
+      <wsdl:output message="tns:CategoryTreeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductToCategoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of connections between products and categories</wsdl:documentation>
+      <wsdl:input message="tns:ProductToCategoryListSoapIn" />
+      <wsdl:output message="tns:ProductToCategoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescriptionsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of products descriptions, paged</wsdl:documentation>
+      <wsdl:input message="tns:DescriptionsListSoapIn" />
+      <wsdl:output message="tns:DescriptionsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImagesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of products images, paged</wsdl:documentation>
+      <wsdl:input message="tns:ImagesListSoapIn" />
+      <wsdl:output message="tns:ImagesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImageAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds image to product item by productId param, 'hash' is optional it will be  auto-calculated if empty</wsdl:documentation>
+      <wsdl:input message="tns:ImageAddSoapIn" />
+      <wsdl:output message="tns:ImageAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescriptionAddOrUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds or updates description for given productId</wsdl:documentation>
+      <wsdl:input message="tns:DescriptionAddOrUpdateSoapIn" />
+      <wsdl:output message="tns:DescriptionAddOrUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptionsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of product options, max Page size is 500</wsdl:documentation>
+      <wsdl:input message="tns:OptionsListSoapIn" />
+      <wsdl:output message="tns:OptionsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBasicOption">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add basic option, without variant. ProductOption is returned when success</wsdl:documentation>
+      <wsdl:input message="tns:AddBasicOptionSoapIn" />
+      <wsdl:output message="tns:AddBasicOptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVariantOption">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add one of many option to product with variants</wsdl:documentation>
+      <wsdl:input message="tns:AddVariantOptionSoapIn" />
+      <wsdl:output message="tns:AddVariantOptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptionsStockAndPriceUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update existing options, returns operations executed count. Max batch size is 500</wsdl:documentation>
+      <wsdl:input message="tns:OptionsStockAndPriceUpdateSoapIn" />
+      <wsdl:output message="tns:OptionsStockAndPriceUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOptions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes options by its db id</wsdl:documentation>
+      <wsdl:input message="tns:RemoveOptionsSoapIn" />
+      <wsdl:output message="tns:RemoveOptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of products</wsdl:documentation>
+      <wsdl:input message="tns:ProductsListSoapIn" />
+      <wsdl:output message="tns:ProductsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds new product entry, returned value is DB Id</wsdl:documentation>
+      <wsdl:input message="tns:ProductAddSoapIn" />
+      <wsdl:output message="tns:ProductAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates product entries</wsdl:documentation>
+      <wsdl:input message="tns:ProductUpdateSoapIn" />
+      <wsdl:output message="tns:ProductUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProducersList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of all manufacturers entries</wsdl:documentation>
+      <wsdl:input message="tns:ProducersListSoapIn" />
+      <wsdl:output message="tns:ProducersListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProducerAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds new manufacturer, and returns updated list</wsdl:documentation>
+      <wsdl:input message="tns:ProducerAddSoapIn" />
+      <wsdl:output message="tns:ProducerAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test connection, returns shop domain if success</wsdl:documentation>
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdersList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List orders, by conditions in OrderQuery filter</wsdl:documentation>
+      <wsdl:input message="tns:OrdersListSoapIn" />
+      <wsdl:output message="tns:OrdersListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdersStatesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of order states</wsdl:documentation>
+      <wsdl:input message="tns:OrdersStatesListSoapIn" />
+      <wsdl:output message="tns:OrdersStatesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update selected order fields</wsdl:documentation>
+      <wsdl:input message="tns:OrderUpdateSoapIn" />
+      <wsdl:output message="tns:OrderUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GOshopAPISoap" type="tns:GOshopAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FeatureAdd">
+      <soap:operation soapAction="http://goshop.pl/soapapi/FeatureAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAdd">
+      <soap:operation soapAction="http://goshop.pl/soapapi/DictionaryAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeaturesAndDictionariesList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/FeaturesAndDictionariesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoryAdd">
+      <soap:operation soapAction="http://goshop.pl/soapapi/CategoryAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoryTreeList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/CategoryTreeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductToCategoryList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ProductToCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescriptionsList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/DescriptionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImagesList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ImagesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageAdd">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ImageAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescriptionAddOrUpdate">
+      <soap:operation soapAction="http://goshop.pl/soapapi/DescriptionAddOrUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptionsList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/OptionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBasicOption">
+      <soap:operation soapAction="http://goshop.pl/soapapi/AddBasicOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVariantOption">
+      <soap:operation soapAction="http://goshop.pl/soapapi/AddVariantOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptionsStockAndPriceUpdate">
+      <soap:operation soapAction="http://goshop.pl/soapapi/OptionsStockAndPriceUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOptions">
+      <soap:operation soapAction="http://goshop.pl/soapapi/RemoveOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ProductsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductAdd">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ProductAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductUpdate">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ProductUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProducersList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ProducersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProducerAdd">
+      <soap:operation soapAction="http://goshop.pl/soapapi/ProducerAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://goshop.pl/soapapi/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdersList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/OrdersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdersStatesList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/OrdersStatesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderUpdate">
+      <soap:operation soapAction="http://goshop.pl/soapapi/OrderUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GOshopAPISoap12" type="tns:GOshopAPISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FeatureAdd">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/FeatureAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAdd">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/DictionaryAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeaturesAndDictionariesList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/FeaturesAndDictionariesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoryAdd">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/CategoryAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoryTreeList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/CategoryTreeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductToCategoryList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ProductToCategoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescriptionsList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/DescriptionsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImagesList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ImagesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageAdd">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ImageAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescriptionAddOrUpdate">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/DescriptionAddOrUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptionsList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/OptionsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBasicOption">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/AddBasicOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVariantOption">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/AddVariantOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptionsStockAndPriceUpdate">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/OptionsStockAndPriceUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOptions">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/RemoveOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ProductsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductAdd">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ProductAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductUpdate">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ProductUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProducersList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ProducersList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProducerAdd">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/ProducerAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdersList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/OrdersList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdersStatesList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/OrdersStatesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderUpdate">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/OrderUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GOshopAPI">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GOshop</wsdl:documentation>
+    <wsdl:port name="GOshopAPISoap" binding="tns:GOshopAPISoap">
+      <soap:address location="https://www.api-goshop.dev/Api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GOshopAPISoap12" binding="tns:GOshopAPISoap12">
+      <soap12:address location="https://www.api-goshop.dev/Api.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
