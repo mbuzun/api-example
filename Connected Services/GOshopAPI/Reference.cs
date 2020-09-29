@@ -642,6 +642,8 @@ namespace ApiTest.GOshopAPI {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SourceImageHashField;
         
+        private int SortField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -717,6 +719,19 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Sort {
+            get {
+                return this.SortField;
+            }
+            set {
+                if ((this.SortField.Equals(value) != true)) {
+                    this.SortField = value;
+                    this.RaisePropertyChanged("Sort");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -741,6 +756,12 @@ namespace ApiTest.GOshopAPI {
         private int PageSizeField;
         
         private System.Nullable<bool> IncludeOptionDictionariesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SKUField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EANField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -787,6 +808,32 @@ namespace ApiTest.GOshopAPI {
                 if ((this.IncludeOptionDictionariesField.Equals(value) != true)) {
                     this.IncludeOptionDictionariesField = value;
                     this.RaisePropertyChanged("IncludeOptionDictionaries");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string SKU {
+            get {
+                return this.SKUField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SKUField, value) != true)) {
+                    this.SKUField = value;
+                    this.RaisePropertyChanged("SKU");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string EAN {
+            get {
+                return this.EANField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EANField, value) != true)) {
+                    this.EANField = value;
+                    this.RaisePropertyChanged("EAN");
                 }
             }
         }
@@ -1612,7 +1659,8 @@ namespace ApiTest.GOshopAPI {
         
         private decimal WeightField;
         
-        private System.Nullable<int> ProducerIdField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProducerNameField;
         
         private int TaxRateField;
         
@@ -1700,15 +1748,15 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<int> ProducerId {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string ProducerName {
             get {
-                return this.ProducerIdField;
+                return this.ProducerNameField;
             }
             set {
-                if ((this.ProducerIdField.Equals(value) != true)) {
-                    this.ProducerIdField = value;
-                    this.RaisePropertyChanged("ProducerId");
+                if ((object.ReferenceEquals(this.ProducerNameField, value) != true)) {
+                    this.ProducerNameField = value;
+                    this.RaisePropertyChanged("ProducerName");
                 }
             }
         }
@@ -2045,6 +2093,8 @@ namespace ApiTest.GOshopAPI {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ApiTest.GOshopAPI.OrderItem[] ItemsField;
         
+        private decimal ShipmentTaxRateField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ApiTest.GOshopAPI.PaymentDetail PaymentField;
         
@@ -2158,7 +2208,20 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal ShipmentTaxRate {
+            get {
+                return this.ShipmentTaxRateField;
+            }
+            set {
+                if ((this.ShipmentTaxRateField.Equals(value) != true)) {
+                    this.ShipmentTaxRateField = value;
+                    this.RaisePropertyChanged("ShipmentTaxRate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public ApiTest.GOshopAPI.PaymentDetail Payment {
             get {
                 return this.PaymentField;
@@ -2171,7 +2234,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public ApiTest.GOshopAPI.DeliveryDetail Delivery {
             get {
                 return this.DeliveryField;
@@ -2184,7 +2247,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string OuterSystemId {
             get {
                 return this.OuterSystemIdField;
@@ -2197,7 +2260,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string BillingDocumentType {
             get {
                 return this.BillingDocumentTypeField;
@@ -2210,7 +2273,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public int StateId {
             get {
                 return this.StateIdField;
@@ -2223,7 +2286,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public int OrderId {
             get {
                 return this.OrderIdField;
@@ -2236,7 +2299,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string Email {
             get {
                 return this.EmailField;
@@ -2249,7 +2312,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public string BillingTaxIdentifier {
             get {
                 return this.BillingTaxIdentifierField;
@@ -2262,7 +2325,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string BillingCompany {
             get {
                 return this.BillingCompanyField;
@@ -2275,7 +2338,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public string BillingSecondName {
             get {
                 return this.BillingSecondNameField;
@@ -2288,7 +2351,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
         public string BillingFirstName {
             get {
                 return this.BillingFirstNameField;
@@ -2301,7 +2364,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public string BillingAddres {
             get {
                 return this.BillingAddresField;
@@ -2314,7 +2377,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
         public string BillingAddres2 {
             get {
                 return this.BillingAddres2Field;
@@ -2327,7 +2390,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
         public string BillingAddres3 {
             get {
                 return this.BillingAddres3Field;
@@ -2340,7 +2403,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
         public decimal OrderWeight {
             get {
                 return this.OrderWeightField;
@@ -2353,7 +2416,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
         public string BillingCity {
             get {
                 return this.BillingCityField;
@@ -2366,7 +2429,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
         public string BillingPostal {
             get {
                 return this.BillingPostalField;
@@ -2379,7 +2442,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
         public string BillingPhone {
             get {
                 return this.BillingPhoneField;
@@ -2392,7 +2455,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
         public string DeliveryFirstName {
             get {
                 return this.DeliveryFirstNameField;
@@ -2405,7 +2468,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
         public string DeliveryLastName {
             get {
                 return this.DeliveryLastNameField;
@@ -2418,7 +2481,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
         public string DeliveryAddress {
             get {
                 return this.DeliveryAddressField;
@@ -2431,7 +2494,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
         public string DeliveryAddress2 {
             get {
                 return this.DeliveryAddress2Field;
@@ -2444,7 +2507,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
         public string DeliveryAddress3 {
             get {
                 return this.DeliveryAddress3Field;
@@ -2457,7 +2520,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
         public string DeliveryCity {
             get {
                 return this.DeliveryCityField;
@@ -2470,7 +2533,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
         public string DeliveryPostalCode {
             get {
                 return this.DeliveryPostalCodeField;
@@ -2483,7 +2546,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
         public string DeliveryPhone {
             get {
                 return this.DeliveryPhoneField;
@@ -2496,7 +2559,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
         public string ShippingNumber {
             get {
                 return this.ShippingNumberField;
@@ -2509,7 +2572,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
         public string PickupPointJSON {
             get {
                 return this.PickupPointJSONField;
@@ -2522,7 +2585,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
         public System.DateTime CreatedOn {
             get {
                 return this.CreatedOnField;
@@ -2535,7 +2598,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
         public string CustomerNotes {
             get {
                 return this.CustomerNotesField;
@@ -2548,7 +2611,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
         public decimal OrderPaymentBalance {
             get {
                 return this.OrderPaymentBalanceField;
@@ -2561,7 +2624,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
         public decimal ShipmentPriceGross {
             get {
                 return this.ShipmentPriceGrossField;
@@ -2713,6 +2776,10 @@ namespace ApiTest.GOshopAPI {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private decimal TaxRateField;
+        
+        private System.Nullable<decimal> AppliedDiscountPercentField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
@@ -2746,7 +2813,33 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal TaxRate {
+            get {
+                return this.TaxRateField;
+            }
+            set {
+                if ((this.TaxRateField.Equals(value) != true)) {
+                    this.TaxRateField = value;
+                    this.RaisePropertyChanged("TaxRate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.Nullable<decimal> AppliedDiscountPercent {
+            get {
+                return this.AppliedDiscountPercentField;
+            }
+            set {
+                if ((this.AppliedDiscountPercentField.Equals(value) != true)) {
+                    this.AppliedDiscountPercentField = value;
+                    this.RaisePropertyChanged("AppliedDiscountPercent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string Name {
             get {
                 return this.NameField;
@@ -2759,7 +2852,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string SKU {
             get {
                 return this.SKUField;
@@ -2772,7 +2865,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string EAN {
             get {
                 return this.EANField;
@@ -2785,7 +2878,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public decimal UnitWeight {
             get {
                 return this.UnitWeightField;
@@ -2798,7 +2891,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public decimal TotalWeight {
             get {
                 return this.TotalWeightField;
@@ -2811,7 +2904,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public int ProductId {
             get {
                 return this.ProductIdField;
@@ -2824,7 +2917,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public int OptionId {
             get {
                 return this.OptionIdField;
@@ -2837,7 +2930,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public decimal UnitPriceGross {
             get {
                 return this.UnitPriceGrossField;
@@ -2850,7 +2943,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public int Quantity {
             get {
                 return this.QuantityField;
@@ -2863,7 +2956,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public decimal TotalPriceGross {
             get {
                 return this.TotalPriceGrossField;
@@ -2995,6 +3088,9 @@ namespace ApiTest.GOshopAPI {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NewOuterSystemIDField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NewOuterSystemContentField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -3053,6 +3149,19 @@ namespace ApiTest.GOshopAPI {
                 if ((object.ReferenceEquals(this.NewOuterSystemIDField, value) != true)) {
                     this.NewOuterSystemIDField = value;
                     this.RaisePropertyChanged("NewOuterSystemID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string NewOuterSystemContent {
+            get {
+                return this.NewOuterSystemContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NewOuterSystemContentField, value) != true)) {
+                    this.NewOuterSystemContentField = value;
+                    this.RaisePropertyChanged("NewOuterSystemContent");
                 }
             }
         }
@@ -3133,6 +3242,12 @@ namespace ApiTest.GOshopAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageAdd", ReplyAction="*")]
         System.Threading.Tasks.Task<ApiTest.GOshopAPI.ImageAddResponse> ImageAddAsync(ApiTest.GOshopAPI.ImageAddRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageRemove", ReplyAction="*")]
+        void ImageRemove(int productPictureId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageRemove", ReplyAction="*")]
+        System.Threading.Tasks.Task ImageRemoveAsync(int productPictureId);
         
         // CODEGEN: Generating message contract since element name fullHtmlDescription from namespace http://goshop.pl/soapapi is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DescriptionAddOrUpdate", ReplyAction="*")]
@@ -5101,6 +5216,14 @@ namespace ApiTest.GOshopAPI {
             inValue.Body.imageBytes = imageBytes;
             inValue.Body.hash = hash;
             return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ImageAddAsync(inValue);
+        }
+        
+        public void ImageRemove(int productPictureId) {
+            base.Channel.ImageRemove(productPictureId);
+        }
+        
+        public System.Threading.Tasks.Task ImageRemoveAsync(int productPictureId) {
+            return base.Channel.ImageRemoveAsync(productPictureId);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
