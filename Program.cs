@@ -378,7 +378,7 @@ namespace ApiTest
                 Active = true,
                 BaseEAN = Guid.NewGuid().ToString().Substring(0, 13),
                 BaseSKU = Guid.NewGuid().ToString().Substring(0, 13),
-                ProducerId = producers.OrderBy(n => Guid.NewGuid()).First().ProducerId,
+                ProducerName = producers.OrderBy(n => Guid.NewGuid()).First().ProducerName,
                 TaxRate = 23,
                 Name = $"Test Product {Utilities.GetRandomString(5)}",
                 Weight = 0.05m,
