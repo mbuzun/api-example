@@ -1023,6 +1023,9 @@ namespace ApiTest.GOshopAPI {
         
         private decimal PriceGrossField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ApiTest.GOshopAPI.OptionDictionaryDefinition[] DictionariesField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -1107,6 +1110,80 @@ namespace ApiTest.GOshopAPI {
                 if ((this.PriceGrossField.Equals(value) != true)) {
                     this.PriceGrossField = value;
                     this.RaisePropertyChanged("PriceGross");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public ApiTest.GOshopAPI.OptionDictionaryDefinition[] Dictionaries {
+            get {
+                return this.DictionariesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DictionariesField, value) != true)) {
+                    this.DictionariesField = value;
+                    this.RaisePropertyChanged("Dictionaries");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OptionDictionaryDefinition", Namespace="http://goshop.pl/soapapi")]
+    [System.SerializableAttribute()]
+    public partial class OptionDictionaryDefinition : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FeatureNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DictionaryNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FeatureName {
+            get {
+                return this.FeatureNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FeatureNameField, value) != true)) {
+                    this.FeatureNameField = value;
+                    this.RaisePropertyChanged("FeatureName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string DictionaryName {
+            get {
+                return this.DictionaryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DictionaryNameField, value) != true)) {
+                    this.DictionaryNameField = value;
+                    this.RaisePropertyChanged("DictionaryName");
                 }
             }
         }
@@ -4196,15 +4273,11 @@ namespace ApiTest.GOshopAPI {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public ApiTest.GOshopAPI.OptionAddRequest request;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public ApiTest.GOshopAPI.ArrayOfInt dictionaryIds;
-        
         public AddVariantOptionRequestBody() {
         }
         
-        public AddVariantOptionRequestBody(ApiTest.GOshopAPI.OptionAddRequest request, ApiTest.GOshopAPI.ArrayOfInt dictionaryIds) {
+        public AddVariantOptionRequestBody(ApiTest.GOshopAPI.OptionAddRequest request) {
             this.request = request;
-            this.dictionaryIds = dictionaryIds;
         }
     }
     
@@ -5307,11 +5380,10 @@ namespace ApiTest.GOshopAPI {
             return base.Channel.AddVariantOption(request);
         }
         
-        public ApiTest.GOshopAPI.ProductOption AddVariantOption(ApiTest.GOshopAPI.OptionAddRequest request, ApiTest.GOshopAPI.ArrayOfInt dictionaryIds) {
+        public ApiTest.GOshopAPI.ProductOption AddVariantOption(ApiTest.GOshopAPI.OptionAddRequest request) {
             ApiTest.GOshopAPI.AddVariantOptionRequest inValue = new ApiTest.GOshopAPI.AddVariantOptionRequest();
             inValue.Body = new ApiTest.GOshopAPI.AddVariantOptionRequestBody();
             inValue.Body.request = request;
-            inValue.Body.dictionaryIds = dictionaryIds;
             ApiTest.GOshopAPI.AddVariantOptionResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).AddVariantOption(inValue);
             return retVal.Body.AddVariantOptionResult;
         }
@@ -5321,11 +5393,10 @@ namespace ApiTest.GOshopAPI {
             return base.Channel.AddVariantOptionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddVariantOptionResponse> AddVariantOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request, ApiTest.GOshopAPI.ArrayOfInt dictionaryIds) {
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddVariantOptionResponse> AddVariantOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request) {
             ApiTest.GOshopAPI.AddVariantOptionRequest inValue = new ApiTest.GOshopAPI.AddVariantOptionRequest();
             inValue.Body = new ApiTest.GOshopAPI.AddVariantOptionRequestBody();
             inValue.Body.request = request;
-            inValue.Body.dictionaryIds = dictionaryIds;
             return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).AddVariantOptionAsync(inValue);
         }
         

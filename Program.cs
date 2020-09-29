@@ -39,7 +39,6 @@ namespace ApiTest
                 Dictionaries(service);
 
                 var producers = service.ProducersList();
-                var dictionaries = service.FeaturesAndDictionariesList();
 
                 for (var i = 0; i < 10; i++)
                 {
@@ -47,7 +46,7 @@ namespace ApiTest
                 }
                 for (var i = 0; i < 10; i++)
                 {
-                    AddProductWithVariants(service, producers, dictionaries);
+                    AddProductWithVariants(service, producers);
                 }
 
 
@@ -139,12 +138,12 @@ namespace ApiTest
 
             for (var i = 0; i < request.Count; i += batchSize)
             {
-                var items = request.Skip(i).Take(batchSize); 
+                var items = request.Skip(i).Take(batchSize);
                 rowsAffected += service.OptionsStockAndPriceUpdate(items.ToArray());
                 Console.WriteLine($"Batch part done, items processed: {i}");
             }
 
-           
+
             Console.WriteLine($"Large update ended, rows affected {rowsAffected}");
         }
         private static void OptionsListing(GOshopAPISoapClient service)
@@ -212,7 +211,7 @@ namespace ApiTest
                     {
                         foreach (var productOption in product.OptionsList)
                         {
-                            var fullname= string.Join(", ", productOption.Dictionaries.Select(x=>$"{x.FeatureName}:{x.DictionaryValue}"));
+                            var fullname = string.Join(", ", productOption.Dictionaries.Select(x => $"{x.FeatureName}:{x.DictionaryValue}"));
                             Console.WriteLine($"\tOption: {fullname}");
                             Console.WriteLine($"\t\tEAN: {productOption.EAN}");
                             Console.WriteLine($"\t\tEAN: {productOption.EAN}");
@@ -235,7 +234,7 @@ namespace ApiTest
 
 
         }
-        private static void AddProductWithVariants(GOshopAPISoapClient service, ProductProducer[] producers, ProductFeature[] dictionaries)
+        private static void AddProductWithVariants(GOshopAPISoapClient service, ProductProducer[] producers)
         {
             var resultId = service.ProductAdd(new ProductAddStruct
             {
@@ -257,12 +256,22 @@ namespace ApiTest
                 EAN = Utilities.GetRandomString(13),
                 SKU = Utilities.GetRandomString(8),
                 ProductId = resultId,
-                Stock = new Random().Next(0, 100)
+                Stock = new Random().Next(0, 100),
+                Dictionaries = new[]
+                {
+                    new OptionDictionaryDefinition
+                    {
+                        FeatureName = "Kolor",
+                        DictionaryName = "Biały"
+                    },
+                    new OptionDictionaryDefinition
+                    {
+                        FeatureName = "Rozmiar",
+                        DictionaryName = "xxl"
+                    }
+                }
 
 
-            }, new ArrayOfInt
-            {
-                1,3,11
             });
             service.AddVariantOption(new OptionAddRequest
             {
@@ -271,16 +280,59 @@ namespace ApiTest
                 EAN = Utilities.GetRandomString(13),
                 SKU = Utilities.GetRandomString(8),
                 ProductId = resultId,
-                Stock = new Random().Next(0, 100)
+                Stock = new Random().Next(0, 100),
+                Dictionaries = new[]
+                {
+                    new OptionDictionaryDefinition()
+                    {
+                        FeatureName = "Kolor",
+                        DictionaryName = "Biały"
+                    },
+                    new OptionDictionaryDefinition()
+                    {
+                        FeatureName = "Rozmiar",
+                        DictionaryName = "S"
+                    }
+                }
 
 
-            }, new ArrayOfInt
-            {
-                1,3,12
             });
+            try
+            {
+                //this product has different definitions of features than already added products
+                service.AddVariantOption(new OptionAddRequest
+                {
+                    CatalogPriceGross = new Random().NextDecimal(1000, 5000),
+                    PriceGross = new Random().NextDecimal(1000, 5000),
+                    EAN = Utilities.GetRandomString(13),
+                    SKU = Utilities.GetRandomString(8),
+                    ProductId = resultId,
+                    Stock = new Random().Next(0, 100),
+                    Dictionaries = new[]
+                    {
+                        new OptionDictionaryDefinition()
+                        {
+                            FeatureName = "Kolory inne",
+                            DictionaryName = "Biały"
+                        },
+                        new OptionDictionaryDefinition()
+                        {
+                            FeatureName = "Rozmiar",
+                            DictionaryName = "S"
+                        }
+                    }
+
+
+                });
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
 
             try
             {
+                //this product already have options from dictionaries, basic option cannot be added
                 service.AddBasicOption(new OptionAddRequest
                 {
                     CatalogPriceGross = new Random().NextDecimal(1000, 5000),
