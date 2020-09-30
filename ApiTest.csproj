@@ -58,73 +58,22 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Connected Services\GOshopAPI\Api.wsdl" />
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.AddBasicOptionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.AddVariantOptionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.CategoryAddResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.CategoryTreeListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.DescriptionsListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.DictionaryAddResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.FeatureAddResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ImageAddResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ImagesListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OptionsListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse.datasource">
+    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OptionUpdateResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.Order.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OrdersListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OrdersStatesListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OrderState.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.OrderUpdateResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.PingResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProducerAddResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProducersListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.Product.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductAddResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductCategory.datasource">
@@ -156,19 +105,10 @@
     <None Include="Connected Services\GOshopAPI\Api.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductsListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductToCategory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductToCategoryListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductUpdateResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.RemoveOptionsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GOshopAPI\configuration91.svcinfo" />

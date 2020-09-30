@@ -9,3726 +9,3301 @@
 //------------------------------------------------------------------------------
 
 namespace ApiTest.GOshopAPI {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductFeature", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductFeature : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ProductFeatureDictionary[] DictionariesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FeatureNameField;
-        
-        private int FeatureIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ApiTest.GOshopAPI.ProductFeatureDictionary[] Dictionaries {
-            get {
-                return this.DictionariesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DictionariesField, value) != true)) {
-                    this.DictionariesField = value;
-                    this.RaisePropertyChanged("Dictionaries");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FeatureName {
-            get {
-                return this.FeatureNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FeatureNameField, value) != true)) {
-                    this.FeatureNameField = value;
-                    this.RaisePropertyChanged("FeatureName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int FeatureId {
-            get {
-                return this.FeatureIdField;
-            }
-            set {
-                if ((this.FeatureIdField.Equals(value) != true)) {
-                    this.FeatureIdField = value;
-                    this.RaisePropertyChanged("FeatureId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductFeatureDictionary", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductFeatureDictionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FeatureNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DictionaryValueField;
-        
-        private int FeatureIdField;
-        
-        private int DictionaryIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FeatureName {
-            get {
-                return this.FeatureNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FeatureNameField, value) != true)) {
-                    this.FeatureNameField = value;
-                    this.RaisePropertyChanged("FeatureName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string DictionaryValue {
-            get {
-                return this.DictionaryValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DictionaryValueField, value) != true)) {
-                    this.DictionaryValueField = value;
-                    this.RaisePropertyChanged("DictionaryValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int FeatureId {
-            get {
-                return this.FeatureIdField;
-            }
-            set {
-                if ((this.FeatureIdField.Equals(value) != true)) {
-                    this.FeatureIdField = value;
-                    this.RaisePropertyChanged("FeatureId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int DictionaryId {
-            get {
-                return this.DictionaryIdField;
-            }
-            set {
-                if ((this.DictionaryIdField.Equals(value) != true)) {
-                    this.DictionaryIdField = value;
-                    this.RaisePropertyChanged("DictionaryId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductCategory", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<int> ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductCategoryNameField;
-        
-        private int ProductCategoryIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ProductCategoryName {
-            get {
-                return this.ProductCategoryNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductCategoryNameField, value) != true)) {
-                    this.ProductCategoryNameField = value;
-                    this.RaisePropertyChanged("ProductCategoryName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int ProductCategoryId {
-            get {
-                return this.ProductCategoryIdField;
-            }
-            set {
-                if ((this.ProductCategoryIdField.Equals(value) != true)) {
-                    this.ProductCategoryIdField = value;
-                    this.RaisePropertyChanged("ProductCategoryId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CategoryToProductQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class CategoryToProductQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<int> ProductIdField;
-        
-        private System.Nullable<int> CategoryIdField;
-        
-        private int PageSizeField;
-        
-        private int PageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<int> CategoryId {
-            get {
-                return this.CategoryIdField;
-            }
-            set {
-                if ((this.CategoryIdField.Equals(value) != true)) {
-                    this.CategoryIdField = value;
-                    this.RaisePropertyChanged("CategoryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductToCategory", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductToCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int ProductIdField;
-        
-        private int CategoryIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int CategoryId {
-            get {
-                return this.CategoryIdField;
-            }
-            set {
-                if ((this.CategoryIdField.Equals(value) != true)) {
-                    this.CategoryIdField = value;
-                    this.RaisePropertyChanged("CategoryId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DescriptionQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class DescriptionQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ArrayOfInt ProductIdField;
-        
-        private int PageSizeField;
-        
-        private int PageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ApiTest.GOshopAPI.ArrayOfInt ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductIdField, value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt", Namespace="http://goshop.pl/soapapi", ItemName="int")]
-    [System.SerializableAttribute()]
-    public class ArrayOfInt : System.Collections.Generic.List<int> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductDescription", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductDescription : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int ProductIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullHtmlDescriptionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string FullHtmlDescription {
-            get {
-                return this.FullHtmlDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FullHtmlDescriptionField, value) != true)) {
-                    this.FullHtmlDescriptionField = value;
-                    this.RaisePropertyChanged("FullHtmlDescription");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImageQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ImageQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int PageSizeField;
-        
-        private int PageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ArrayOfInt ProductIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public ApiTest.GOshopAPI.ArrayOfInt ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductIdField, value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductImage", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductImage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int PictureIdField;
-        
-        private int ProductIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FileNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ImageUrlField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SourceImageHashField;
-        
-        private int SortField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int PictureId {
-            get {
-                return this.PictureIdField;
-            }
-            set {
-                if ((this.PictureIdField.Equals(value) != true)) {
-                    this.PictureIdField = value;
-                    this.RaisePropertyChanged("PictureId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string FileName {
-            get {
-                return this.FileNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
-                    this.FileNameField = value;
-                    this.RaisePropertyChanged("FileName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string ImageUrl {
-            get {
-                return this.ImageUrlField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImageUrlField, value) != true)) {
-                    this.ImageUrlField = value;
-                    this.RaisePropertyChanged("ImageUrl");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string SourceImageHash {
-            get {
-                return this.SourceImageHashField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SourceImageHashField, value) != true)) {
-                    this.SourceImageHashField = value;
-                    this.RaisePropertyChanged("SourceImageHash");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Sort {
-            get {
-                return this.SortField;
-            }
-            set {
-                if ((this.SortField.Equals(value) != true)) {
-                    this.SortField = value;
-                    this.RaisePropertyChanged("Sort");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OptionQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int PageField;
-        
-        private int PageSizeField;
-        
-        private System.Nullable<bool> IncludeOptionDictionariesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SKUField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EANField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<bool> IncludeOptionDictionaries {
-            get {
-                return this.IncludeOptionDictionariesField;
-            }
-            set {
-                if ((this.IncludeOptionDictionariesField.Equals(value) != true)) {
-                    this.IncludeOptionDictionariesField = value;
-                    this.RaisePropertyChanged("IncludeOptionDictionaries");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string SKU {
-            get {
-                return this.SKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SKUField, value) != true)) {
-                    this.SKUField = value;
-                    this.RaisePropertyChanged("SKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string EAN {
-            get {
-                return this.EANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EANField, value) != true)) {
-                    this.EANField = value;
-                    this.RaisePropertyChanged("EAN");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOption", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductOption : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ProductFeatureDictionary[] DictionariesField;
-        
-        private int ProductIdField;
-        
-        private int OptionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EANField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SKUField;
-        
-        private System.Nullable<decimal> CatalogPriceGrossField;
-        
-        private int StockField;
-        
-        private decimal PriceGrossField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ApiTest.GOshopAPI.ProductFeatureDictionary[] Dictionaries {
-            get {
-                return this.DictionariesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DictionariesField, value) != true)) {
-                    this.DictionariesField = value;
-                    this.RaisePropertyChanged("Dictionaries");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int OptionId {
-            get {
-                return this.OptionIdField;
-            }
-            set {
-                if ((this.OptionIdField.Equals(value) != true)) {
-                    this.OptionIdField = value;
-                    this.RaisePropertyChanged("OptionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string EAN {
-            get {
-                return this.EANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EANField, value) != true)) {
-                    this.EANField = value;
-                    this.RaisePropertyChanged("EAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string SKU {
-            get {
-                return this.SKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SKUField, value) != true)) {
-                    this.SKUField = value;
-                    this.RaisePropertyChanged("SKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<decimal> CatalogPriceGross {
-            get {
-                return this.CatalogPriceGrossField;
-            }
-            set {
-                if ((this.CatalogPriceGrossField.Equals(value) != true)) {
-                    this.CatalogPriceGrossField = value;
-                    this.RaisePropertyChanged("CatalogPriceGross");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int Stock {
-            get {
-                return this.StockField;
-            }
-            set {
-                if ((this.StockField.Equals(value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal PriceGross {
-            get {
-                return this.PriceGrossField;
-            }
-            set {
-                if ((this.PriceGrossField.Equals(value) != true)) {
-                    this.PriceGrossField = value;
-                    this.RaisePropertyChanged("PriceGross");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionAddRequest", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OptionAddRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int ProductIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EANField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SKUField;
-        
-        private System.Nullable<decimal> CatalogPriceGrossField;
-        
-        private int StockField;
-        
-        private decimal PriceGrossField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.OptionDictionaryDefinition[] DictionariesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string EAN {
-            get {
-                return this.EANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EANField, value) != true)) {
-                    this.EANField = value;
-                    this.RaisePropertyChanged("EAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string SKU {
-            get {
-                return this.SKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SKUField, value) != true)) {
-                    this.SKUField = value;
-                    this.RaisePropertyChanged("SKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<decimal> CatalogPriceGross {
-            get {
-                return this.CatalogPriceGrossField;
-            }
-            set {
-                if ((this.CatalogPriceGrossField.Equals(value) != true)) {
-                    this.CatalogPriceGrossField = value;
-                    this.RaisePropertyChanged("CatalogPriceGross");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int Stock {
-            get {
-                return this.StockField;
-            }
-            set {
-                if ((this.StockField.Equals(value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal PriceGross {
-            get {
-                return this.PriceGrossField;
-            }
-            set {
-                if ((this.PriceGrossField.Equals(value) != true)) {
-                    this.PriceGrossField = value;
-                    this.RaisePropertyChanged("PriceGross");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public ApiTest.GOshopAPI.OptionDictionaryDefinition[] Dictionaries {
-            get {
-                return this.DictionariesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DictionariesField, value) != true)) {
-                    this.DictionariesField = value;
-                    this.RaisePropertyChanged("Dictionaries");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionDictionaryDefinition", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OptionDictionaryDefinition : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FeatureNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DictionaryNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FeatureName {
-            get {
-                return this.FeatureNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FeatureNameField, value) != true)) {
-                    this.FeatureNameField = value;
-                    this.RaisePropertyChanged("FeatureName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string DictionaryName {
-            get {
-                return this.DictionaryNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DictionaryNameField, value) != true)) {
-                    this.DictionaryNameField = value;
-                    this.RaisePropertyChanged("DictionaryName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionUpdateRequest", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OptionUpdateRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<int> UpdateByIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UpdateByEANField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UpdateBySKUField;
-        
-        private System.Nullable<int> StockField;
-        
-        private System.Nullable<decimal> PriceGrossField;
-        
-        private System.Nullable<decimal> CatalogPriceGrossField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> UpdateById {
-            get {
-                return this.UpdateByIdField;
-            }
-            set {
-                if ((this.UpdateByIdField.Equals(value) != true)) {
-                    this.UpdateByIdField = value;
-                    this.RaisePropertyChanged("UpdateById");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UpdateByEAN {
-            get {
-                return this.UpdateByEANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UpdateByEANField, value) != true)) {
-                    this.UpdateByEANField = value;
-                    this.RaisePropertyChanged("UpdateByEAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string UpdateBySKU {
-            get {
-                return this.UpdateBySKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UpdateBySKUField, value) != true)) {
-                    this.UpdateBySKUField = value;
-                    this.RaisePropertyChanged("UpdateBySKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<int> Stock {
-            get {
-                return this.StockField;
-            }
-            set {
-                if ((this.StockField.Equals(value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<decimal> PriceGross {
-            get {
-                return this.PriceGrossField;
-            }
-            set {
-                if ((this.PriceGrossField.Equals(value) != true)) {
-                    this.PriceGrossField = value;
-                    this.RaisePropertyChanged("PriceGross");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<decimal> CatalogPriceGross {
-            get {
-                return this.CatalogPriceGrossField;
-            }
-            set {
-                if ((this.CatalogPriceGrossField.Equals(value) != true)) {
-                    this.CatalogPriceGrossField = value;
-                    this.RaisePropertyChanged("CatalogPriceGross");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<int> CategoryIdField;
-        
-        private System.Nullable<int> ProducerIdField;
-        
-        private System.Nullable<bool> IncludeProductImagesField;
-        
-        private System.Nullable<bool> IncludeProductOptionsField;
-        
-        private System.Nullable<bool> ActiveField;
-        
-        private int PageSizeField;
-        
-        private int PageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> CategoryId {
-            get {
-                return this.CategoryIdField;
-            }
-            set {
-                if ((this.CategoryIdField.Equals(value) != true)) {
-                    this.CategoryIdField = value;
-                    this.RaisePropertyChanged("CategoryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> ProducerId {
-            get {
-                return this.ProducerIdField;
-            }
-            set {
-                if ((this.ProducerIdField.Equals(value) != true)) {
-                    this.ProducerIdField = value;
-                    this.RaisePropertyChanged("ProducerId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<bool> IncludeProductImages {
-            get {
-                return this.IncludeProductImagesField;
-            }
-            set {
-                if ((this.IncludeProductImagesField.Equals(value) != true)) {
-                    this.IncludeProductImagesField = value;
-                    this.RaisePropertyChanged("IncludeProductImages");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<bool> IncludeProductOptions {
-            get {
-                return this.IncludeProductOptionsField;
-            }
-            set {
-                if ((this.IncludeProductOptionsField.Equals(value) != true)) {
-                    this.IncludeProductOptionsField = value;
-                    this.RaisePropertyChanged("IncludeProductOptions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<bool> Active {
-            get {
-                return this.ActiveField;
-            }
-            set {
-                if ((this.ActiveField.Equals(value) != true)) {
-                    this.ActiveField = value;
-                    this.RaisePropertyChanged("Active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<int> ProducerIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ProductProducer ProducerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ProductImage[] ImagesListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ProductOption[] OptionsListField;
-        
-        private decimal WeightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BaseSKUField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BaseEANField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        private bool ActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShortDescriptionField;
-        
-        private System.Nullable<int> AvailabilityStateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> ProducerId {
-            get {
-                return this.ProducerIdField;
-            }
-            set {
-                if ((this.ProducerIdField.Equals(value) != true)) {
-                    this.ProducerIdField = value;
-                    this.RaisePropertyChanged("ProducerId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public ApiTest.GOshopAPI.ProductProducer Producer {
-            get {
-                return this.ProducerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducerField, value) != true)) {
-                    this.ProducerField = value;
-                    this.RaisePropertyChanged("Producer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public ApiTest.GOshopAPI.ProductImage[] ImagesList {
-            get {
-                return this.ImagesListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImagesListField, value) != true)) {
-                    this.ImagesListField = value;
-                    this.RaisePropertyChanged("ImagesList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public ApiTest.GOshopAPI.ProductOption[] OptionsList {
-            get {
-                return this.OptionsListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OptionsListField, value) != true)) {
-                    this.OptionsListField = value;
-                    this.RaisePropertyChanged("OptionsList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal Weight {
-            get {
-                return this.WeightField;
-            }
-            set {
-                if ((this.WeightField.Equals(value) != true)) {
-                    this.WeightField = value;
-                    this.RaisePropertyChanged("Weight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string BaseSKU {
-            get {
-                return this.BaseSKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BaseSKUField, value) != true)) {
-                    this.BaseSKUField = value;
-                    this.RaisePropertyChanged("BaseSKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string BaseEAN {
-            get {
-                return this.BaseEANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BaseEANField, value) != true)) {
-                    this.BaseEANField = value;
-                    this.RaisePropertyChanged("BaseEAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public bool Active {
-            get {
-                return this.ActiveField;
-            }
-            set {
-                if ((this.ActiveField.Equals(value) != true)) {
-                    this.ActiveField = value;
-                    this.RaisePropertyChanged("Active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string ShortDescription {
-            get {
-                return this.ShortDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShortDescriptionField, value) != true)) {
-                    this.ShortDescriptionField = value;
-                    this.RaisePropertyChanged("ShortDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public System.Nullable<int> AvailabilityState {
-            get {
-                return this.AvailabilityStateField;
-            }
-            set {
-                if ((this.AvailabilityStateField.Equals(value) != true)) {
-                    this.AvailabilityStateField = value;
-                    this.RaisePropertyChanged("AvailabilityState");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductProducer", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductProducer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int ProducerIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProducerNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProducerId {
-            get {
-                return this.ProducerIdField;
-            }
-            set {
-                if ((this.ProducerIdField.Equals(value) != true)) {
-                    this.ProducerIdField = value;
-                    this.RaisePropertyChanged("ProducerId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ProducerName {
-            get {
-                return this.ProducerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducerNameField, value) != true)) {
-                    this.ProducerNameField = value;
-                    this.RaisePropertyChanged("ProducerName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductAddStruct", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductAddStruct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private bool ActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BaseSKUField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BaseEANField;
-        
-        private decimal WeightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProducerNameField;
-        
-        private int TaxRateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullHtmlDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShortDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ArrayOfInt CategoryIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool Active {
-            get {
-                return this.ActiveField;
-            }
-            set {
-                if ((this.ActiveField.Equals(value) != true)) {
-                    this.ActiveField = value;
-                    this.RaisePropertyChanged("Active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string BaseSKU {
-            get {
-                return this.BaseSKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BaseSKUField, value) != true)) {
-                    this.BaseSKUField = value;
-                    this.RaisePropertyChanged("BaseSKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string BaseEAN {
-            get {
-                return this.BaseEANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BaseEANField, value) != true)) {
-                    this.BaseEANField = value;
-                    this.RaisePropertyChanged("BaseEAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal Weight {
-            get {
-                return this.WeightField;
-            }
-            set {
-                if ((this.WeightField.Equals(value) != true)) {
-                    this.WeightField = value;
-                    this.RaisePropertyChanged("Weight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string ProducerName {
-            get {
-                return this.ProducerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducerNameField, value) != true)) {
-                    this.ProducerNameField = value;
-                    this.RaisePropertyChanged("ProducerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int TaxRate {
-            get {
-                return this.TaxRateField;
-            }
-            set {
-                if ((this.TaxRateField.Equals(value) != true)) {
-                    this.TaxRateField = value;
-                    this.RaisePropertyChanged("TaxRate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string FullHtmlDescription {
-            get {
-                return this.FullHtmlDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FullHtmlDescriptionField, value) != true)) {
-                    this.FullHtmlDescriptionField = value;
-                    this.RaisePropertyChanged("FullHtmlDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string ShortDescription {
-            get {
-                return this.ShortDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShortDescriptionField, value) != true)) {
-                    this.ShortDescriptionField = value;
-                    this.RaisePropertyChanged("ShortDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public ApiTest.GOshopAPI.ArrayOfInt CategoryId {
-            get {
-                return this.CategoryIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CategoryIdField, value) != true)) {
-                    this.CategoryIdField = value;
-                    this.RaisePropertyChanged("CategoryId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductUpdateStruct", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class ProductUpdateStruct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int ProductIdField;
-        
-        private System.Nullable<int> TaxRateField;
-        
-        private System.Nullable<bool> ActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProducerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullHtmlDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShortDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ArrayOfInt CategoryIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ArrayOfInt RemoveCategoryIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> TaxRate {
-            get {
-                return this.TaxRateField;
-            }
-            set {
-                if ((this.TaxRateField.Equals(value) != true)) {
-                    this.TaxRateField = value;
-                    this.RaisePropertyChanged("TaxRate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<bool> Active {
-            get {
-                return this.ActiveField;
-            }
-            set {
-                if ((this.ActiveField.Equals(value) != true)) {
-                    this.ActiveField = value;
-                    this.RaisePropertyChanged("Active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string ProducerName {
-            get {
-                return this.ProducerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducerNameField, value) != true)) {
-                    this.ProducerNameField = value;
-                    this.RaisePropertyChanged("ProducerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string FullHtmlDescription {
-            get {
-                return this.FullHtmlDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FullHtmlDescriptionField, value) != true)) {
-                    this.FullHtmlDescriptionField = value;
-                    this.RaisePropertyChanged("FullHtmlDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string ShortDescription {
-            get {
-                return this.ShortDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShortDescriptionField, value) != true)) {
-                    this.ShortDescriptionField = value;
-                    this.RaisePropertyChanged("ShortDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public ApiTest.GOshopAPI.ArrayOfInt CategoryId {
-            get {
-                return this.CategoryIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CategoryIdField, value) != true)) {
-                    this.CategoryIdField = value;
-                    this.RaisePropertyChanged("CategoryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public ApiTest.GOshopAPI.ArrayOfInt RemoveCategoryId {
-            get {
-                return this.RemoveCategoryIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemoveCategoryIdField, value) != true)) {
-                    this.RemoveCategoryIdField = value;
-                    this.RaisePropertyChanged("RemoveCategoryId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OrderQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<bool> HaveShippingNumberField;
-        
-        private System.Nullable<bool> HaveOuterSystemIdField;
-        
-        private System.Nullable<System.DateTime> CreatedLaterThanField;
-        
-        private System.Nullable<System.DateTime> CreatedSoonerThanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.ArrayOfInt InStateIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WithOuterSystemIdField;
-        
-        private int PageSizeField;
-        
-        private int PageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<bool> HaveShippingNumber {
-            get {
-                return this.HaveShippingNumberField;
-            }
-            set {
-                if ((this.HaveShippingNumberField.Equals(value) != true)) {
-                    this.HaveShippingNumberField = value;
-                    this.RaisePropertyChanged("HaveShippingNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<bool> HaveOuterSystemId {
-            get {
-                return this.HaveOuterSystemIdField;
-            }
-            set {
-                if ((this.HaveOuterSystemIdField.Equals(value) != true)) {
-                    this.HaveOuterSystemIdField = value;
-                    this.RaisePropertyChanged("HaveOuterSystemId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<System.DateTime> CreatedLaterThan {
-            get {
-                return this.CreatedLaterThanField;
-            }
-            set {
-                if ((this.CreatedLaterThanField.Equals(value) != true)) {
-                    this.CreatedLaterThanField = value;
-                    this.RaisePropertyChanged("CreatedLaterThan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<System.DateTime> CreatedSoonerThan {
-            get {
-                return this.CreatedSoonerThanField;
-            }
-            set {
-                if ((this.CreatedSoonerThanField.Equals(value) != true)) {
-                    this.CreatedSoonerThanField = value;
-                    this.RaisePropertyChanged("CreatedSoonerThan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public ApiTest.GOshopAPI.ArrayOfInt InStateId {
-            get {
-                return this.InStateIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InStateIdField, value) != true)) {
-                    this.InStateIdField = value;
-                    this.RaisePropertyChanged("InStateId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string WithOuterSystemId {
-            get {
-                return this.WithOuterSystemIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WithOuterSystemIdField, value) != true)) {
-                    this.WithOuterSystemIdField = value;
-                    this.RaisePropertyChanged("WithOuterSystemId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.OrderItem[] ItemsField;
-        
-        private decimal ShipmentTaxRateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.PaymentDetail PaymentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApiTest.GOshopAPI.DeliveryDetail DeliveryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OuterSystemIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingDocumentTypeField;
-        
-        private int StateIdField;
-        
-        private int OrderIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingTaxIdentifierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingCompanyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingSecondNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingFirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingAddresField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingAddres2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingAddres3Field;
-        
-        private decimal OrderWeightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingPostalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BillingPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryFirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryLastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryAddress2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryAddress3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryPostalCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShippingNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PickupPointJSONField;
-        
-        private System.DateTime CreatedOnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerNotesField;
-        
-        private decimal OrderPaymentBalanceField;
-        
-        private decimal ShipmentPriceGrossField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ApiTest.GOshopAPI.OrderItem[] Items {
-            get {
-                return this.ItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
-                    this.ItemsField = value;
-                    this.RaisePropertyChanged("Items");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal ShipmentTaxRate {
-            get {
-                return this.ShipmentTaxRateField;
-            }
-            set {
-                if ((this.ShipmentTaxRateField.Equals(value) != true)) {
-                    this.ShipmentTaxRateField = value;
-                    this.RaisePropertyChanged("ShipmentTaxRate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public ApiTest.GOshopAPI.PaymentDetail Payment {
-            get {
-                return this.PaymentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaymentField, value) != true)) {
-                    this.PaymentField = value;
-                    this.RaisePropertyChanged("Payment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public ApiTest.GOshopAPI.DeliveryDetail Delivery {
-            get {
-                return this.DeliveryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryField, value) != true)) {
-                    this.DeliveryField = value;
-                    this.RaisePropertyChanged("Delivery");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string OuterSystemId {
-            get {
-                return this.OuterSystemIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OuterSystemIdField, value) != true)) {
-                    this.OuterSystemIdField = value;
-                    this.RaisePropertyChanged("OuterSystemId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string BillingDocumentType {
-            get {
-                return this.BillingDocumentTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingDocumentTypeField, value) != true)) {
-                    this.BillingDocumentTypeField = value;
-                    this.RaisePropertyChanged("BillingDocumentType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int StateId {
-            get {
-                return this.StateIdField;
-            }
-            set {
-                if ((this.StateIdField.Equals(value) != true)) {
-                    this.StateIdField = value;
-                    this.RaisePropertyChanged("StateId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int OrderId {
-            get {
-                return this.OrderIdField;
-            }
-            set {
-                if ((this.OrderIdField.Equals(value) != true)) {
-                    this.OrderIdField = value;
-                    this.RaisePropertyChanged("OrderId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string BillingTaxIdentifier {
-            get {
-                return this.BillingTaxIdentifierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingTaxIdentifierField, value) != true)) {
-                    this.BillingTaxIdentifierField = value;
-                    this.RaisePropertyChanged("BillingTaxIdentifier");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string BillingCompany {
-            get {
-                return this.BillingCompanyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingCompanyField, value) != true)) {
-                    this.BillingCompanyField = value;
-                    this.RaisePropertyChanged("BillingCompany");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string BillingSecondName {
-            get {
-                return this.BillingSecondNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingSecondNameField, value) != true)) {
-                    this.BillingSecondNameField = value;
-                    this.RaisePropertyChanged("BillingSecondName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public string BillingFirstName {
-            get {
-                return this.BillingFirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingFirstNameField, value) != true)) {
-                    this.BillingFirstNameField = value;
-                    this.RaisePropertyChanged("BillingFirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public string BillingAddres {
-            get {
-                return this.BillingAddresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingAddresField, value) != true)) {
-                    this.BillingAddresField = value;
-                    this.RaisePropertyChanged("BillingAddres");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string BillingAddres2 {
-            get {
-                return this.BillingAddres2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingAddres2Field, value) != true)) {
-                    this.BillingAddres2Field = value;
-                    this.RaisePropertyChanged("BillingAddres2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public string BillingAddres3 {
-            get {
-                return this.BillingAddres3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingAddres3Field, value) != true)) {
-                    this.BillingAddres3Field = value;
-                    this.RaisePropertyChanged("BillingAddres3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal OrderWeight {
-            get {
-                return this.OrderWeightField;
-            }
-            set {
-                if ((this.OrderWeightField.Equals(value) != true)) {
-                    this.OrderWeightField = value;
-                    this.RaisePropertyChanged("OrderWeight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
-        public string BillingCity {
-            get {
-                return this.BillingCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingCityField, value) != true)) {
-                    this.BillingCityField = value;
-                    this.RaisePropertyChanged("BillingCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
-        public string BillingPostal {
-            get {
-                return this.BillingPostalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingPostalField, value) != true)) {
-                    this.BillingPostalField = value;
-                    this.RaisePropertyChanged("BillingPostal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
-        public string BillingPhone {
-            get {
-                return this.BillingPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillingPhoneField, value) != true)) {
-                    this.BillingPhoneField = value;
-                    this.RaisePropertyChanged("BillingPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
-        public string DeliveryFirstName {
-            get {
-                return this.DeliveryFirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryFirstNameField, value) != true)) {
-                    this.DeliveryFirstNameField = value;
-                    this.RaisePropertyChanged("DeliveryFirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
-        public string DeliveryLastName {
-            get {
-                return this.DeliveryLastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryLastNameField, value) != true)) {
-                    this.DeliveryLastNameField = value;
-                    this.RaisePropertyChanged("DeliveryLastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
-        public string DeliveryAddress {
-            get {
-                return this.DeliveryAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryAddressField, value) != true)) {
-                    this.DeliveryAddressField = value;
-                    this.RaisePropertyChanged("DeliveryAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
-        public string DeliveryAddress2 {
-            get {
-                return this.DeliveryAddress2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryAddress2Field, value) != true)) {
-                    this.DeliveryAddress2Field = value;
-                    this.RaisePropertyChanged("DeliveryAddress2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
-        public string DeliveryAddress3 {
-            get {
-                return this.DeliveryAddress3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryAddress3Field, value) != true)) {
-                    this.DeliveryAddress3Field = value;
-                    this.RaisePropertyChanged("DeliveryAddress3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
-        public string DeliveryCity {
-            get {
-                return this.DeliveryCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryCityField, value) != true)) {
-                    this.DeliveryCityField = value;
-                    this.RaisePropertyChanged("DeliveryCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
-        public string DeliveryPostalCode {
-            get {
-                return this.DeliveryPostalCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryPostalCodeField, value) != true)) {
-                    this.DeliveryPostalCodeField = value;
-                    this.RaisePropertyChanged("DeliveryPostalCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
-        public string DeliveryPhone {
-            get {
-                return this.DeliveryPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryPhoneField, value) != true)) {
-                    this.DeliveryPhoneField = value;
-                    this.RaisePropertyChanged("DeliveryPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
-        public string ShippingNumber {
-            get {
-                return this.ShippingNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShippingNumberField, value) != true)) {
-                    this.ShippingNumberField = value;
-                    this.RaisePropertyChanged("ShippingNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
-        public string PickupPointJSON {
-            get {
-                return this.PickupPointJSONField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PickupPointJSONField, value) != true)) {
-                    this.PickupPointJSONField = value;
-                    this.RaisePropertyChanged("PickupPointJSON");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
-        public System.DateTime CreatedOn {
-            get {
-                return this.CreatedOnField;
-            }
-            set {
-                if ((this.CreatedOnField.Equals(value) != true)) {
-                    this.CreatedOnField = value;
-                    this.RaisePropertyChanged("CreatedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
-        public string CustomerNotes {
-            get {
-                return this.CustomerNotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerNotesField, value) != true)) {
-                    this.CustomerNotesField = value;
-                    this.RaisePropertyChanged("CustomerNotes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
-        public decimal OrderPaymentBalance {
-            get {
-                return this.OrderPaymentBalanceField;
-            }
-            set {
-                if ((this.OrderPaymentBalanceField.Equals(value) != true)) {
-                    this.OrderPaymentBalanceField = value;
-                    this.RaisePropertyChanged("OrderPaymentBalance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
-        public decimal ShipmentPriceGross {
-            get {
-                return this.ShipmentPriceGrossField;
-            }
-            set {
-                if ((this.ShipmentPriceGrossField.Equals(value) != true)) {
-                    this.ShipmentPriceGrossField = value;
-                    this.RaisePropertyChanged("ShipmentPriceGross");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentDetail", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class PaymentDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int PaymentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int PaymentId {
-            get {
-                return this.PaymentIdField;
-            }
-            set {
-                if ((this.PaymentIdField.Equals(value) != true)) {
-                    this.PaymentIdField = value;
-                    this.RaisePropertyChanged("PaymentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DeliveryDetail", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class DeliveryDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int DeliveryIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int DeliveryId {
-            get {
-                return this.DeliveryIdField;
-            }
-            set {
-                if ((this.DeliveryIdField.Equals(value) != true)) {
-                    this.DeliveryIdField = value;
-                    this.RaisePropertyChanged("DeliveryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderItem", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OrderItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal TaxRateField;
-        
-        private System.Nullable<decimal> AppliedDiscountPercentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SKUField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EANField;
-        
-        private decimal UnitWeightField;
-        
-        private decimal TotalWeightField;
-        
-        private int ProductIdField;
-        
-        private int OptionIdField;
-        
-        private decimal UnitPriceGrossField;
-        
-        private int QuantityField;
-        
-        private decimal TotalPriceGrossField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal TaxRate {
-            get {
-                return this.TaxRateField;
-            }
-            set {
-                if ((this.TaxRateField.Equals(value) != true)) {
-                    this.TaxRateField = value;
-                    this.RaisePropertyChanged("TaxRate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<decimal> AppliedDiscountPercent {
-            get {
-                return this.AppliedDiscountPercentField;
-            }
-            set {
-                if ((this.AppliedDiscountPercentField.Equals(value) != true)) {
-                    this.AppliedDiscountPercentField = value;
-                    this.RaisePropertyChanged("AppliedDiscountPercent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string SKU {
-            get {
-                return this.SKUField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SKUField, value) != true)) {
-                    this.SKUField = value;
-                    this.RaisePropertyChanged("SKU");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string EAN {
-            get {
-                return this.EANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EANField, value) != true)) {
-                    this.EANField = value;
-                    this.RaisePropertyChanged("EAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal UnitWeight {
-            get {
-                return this.UnitWeightField;
-            }
-            set {
-                if ((this.UnitWeightField.Equals(value) != true)) {
-                    this.UnitWeightField = value;
-                    this.RaisePropertyChanged("UnitWeight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal TotalWeight {
-            get {
-                return this.TotalWeightField;
-            }
-            set {
-                if ((this.TotalWeightField.Equals(value) != true)) {
-                    this.TotalWeightField = value;
-                    this.RaisePropertyChanged("TotalWeight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int OptionId {
-            get {
-                return this.OptionIdField;
-            }
-            set {
-                if ((this.OptionIdField.Equals(value) != true)) {
-                    this.OptionIdField = value;
-                    this.RaisePropertyChanged("OptionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal UnitPriceGross {
-            get {
-                return this.UnitPriceGrossField;
-            }
-            set {
-                if ((this.UnitPriceGrossField.Equals(value) != true)) {
-                    this.UnitPriceGrossField = value;
-                    this.RaisePropertyChanged("UnitPriceGross");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int Quantity {
-            get {
-                return this.QuantityField;
-            }
-            set {
-                if ((this.QuantityField.Equals(value) != true)) {
-                    this.QuantityField = value;
-                    this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal TotalPriceGross {
-            get {
-                return this.TotalPriceGrossField;
-            }
-            set {
-                if ((this.TotalPriceGrossField.Equals(value) != true)) {
-                    this.TotalPriceGrossField = value;
-                    this.RaisePropertyChanged("TotalPriceGross");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderState", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OrderState : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateNameField;
-        
-        private int StateIdField;
-        
-        private int StockActionTypeField;
-        
-        private int StateTypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string StateName {
-            get {
-                return this.StateNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateNameField, value) != true)) {
-                    this.StateNameField = value;
-                    this.RaisePropertyChanged("StateName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int StateId {
-            get {
-                return this.StateIdField;
-            }
-            set {
-                if ((this.StateIdField.Equals(value) != true)) {
-                    this.StateIdField = value;
-                    this.RaisePropertyChanged("StateId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int StockActionType {
-            get {
-                return this.StockActionTypeField;
-            }
-            set {
-                if ((this.StockActionTypeField.Equals(value) != true)) {
-                    this.StockActionTypeField = value;
-                    this.RaisePropertyChanged("StockActionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int StateType {
-            get {
-                return this.StateTypeField;
-            }
-            set {
-                if ((this.StateTypeField.Equals(value) != true)) {
-                    this.StateTypeField = value;
-                    this.RaisePropertyChanged("StateType");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderUpdateQuery", Namespace="http://goshop.pl/soapapi")]
-    [System.SerializableAttribute()]
-    public partial class OrderUpdateQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int OrderIdField;
-        
-        private System.Nullable<int> NewStateIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewShippingNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewOuterSystemIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewOuterSystemContentField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int OrderId {
-            get {
-                return this.OrderIdField;
-            }
-            set {
-                if ((this.OrderIdField.Equals(value) != true)) {
-                    this.OrderIdField = value;
-                    this.RaisePropertyChanged("OrderId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<int> NewStateId {
-            get {
-                return this.NewStateIdField;
-            }
-            set {
-                if ((this.NewStateIdField.Equals(value) != true)) {
-                    this.NewStateIdField = value;
-                    this.RaisePropertyChanged("NewStateId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string NewShippingNumber {
-            get {
-                return this.NewShippingNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewShippingNumberField, value) != true)) {
-                    this.NewShippingNumberField = value;
-                    this.RaisePropertyChanged("NewShippingNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string NewOuterSystemID {
-            get {
-                return this.NewOuterSystemIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewOuterSystemIDField, value) != true)) {
-                    this.NewOuterSystemIDField = value;
-                    this.RaisePropertyChanged("NewOuterSystemID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string NewOuterSystemContent {
-            get {
-                return this.NewOuterSystemContentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewOuterSystemContentField, value) != true)) {
-                    this.NewOuterSystemContentField = value;
-                    this.RaisePropertyChanged("NewOuterSystemContent");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://goshop.pl/soapapi", ConfigurationName="GOshopAPI.GOshopAPISoap")]
     public interface GOshopAPISoap {
         
-        // CODEGEN: Generating message contract since element name featureName from namespace http://goshop.pl/soapapi is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/FeatureAdd", ReplyAction="*")]
-        ApiTest.GOshopAPI.FeatureAddResponse FeatureAdd(ApiTest.GOshopAPI.FeatureAddRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int FeatureAdd(string featureName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/FeatureAdd", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.FeatureAddResponse> FeatureAddAsync(ApiTest.GOshopAPI.FeatureAddRequest request);
-        
-        // CODEGEN: Generating message contract since element name dictionaryValue from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DictionaryAdd", ReplyAction="*")]
-        ApiTest.GOshopAPI.DictionaryAddResponse DictionaryAdd(ApiTest.GOshopAPI.DictionaryAddRequest request);
+        System.Threading.Tasks.Task<int> FeatureAddAsync(string featureName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DictionaryAdd", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.DictionaryAddResponse> DictionaryAddAsync(ApiTest.GOshopAPI.DictionaryAddRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int DictionaryAdd(int featureId, string dictionaryValue);
         
-        // CODEGEN: Generating message contract since element name FeaturesAndDictionariesListResult from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DictionaryAdd", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> DictionaryAddAsync(int featureId, string dictionaryValue);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/FeaturesAndDictionariesList", ReplyAction="*")]
-        ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse FeaturesAndDictionariesList(ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductFeature[] FeaturesAndDictionariesList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/FeaturesAndDictionariesList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse> FeaturesAndDictionariesListAsync(ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductFeature[]> FeaturesAndDictionariesListAsync();
         
-        // CODEGEN: Generating message contract since element name categoryName from namespace http://goshop.pl/soapapi is not marked nillable
+        // CODEGEN: Parameter 'CategoryAddResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/CategoryAdd", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ApiTest.GOshopAPI.CategoryAddResponse CategoryAdd(ApiTest.GOshopAPI.CategoryAddRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/CategoryAdd", ReplyAction="*")]
         System.Threading.Tasks.Task<ApiTest.GOshopAPI.CategoryAddResponse> CategoryAddAsync(ApiTest.GOshopAPI.CategoryAddRequest request);
         
-        // CODEGEN: Generating message contract since element name CategoryTreeListResult from namespace http://goshop.pl/soapapi is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/CategoryTreeList", ReplyAction="*")]
-        ApiTest.GOshopAPI.CategoryTreeListResponse CategoryTreeList(ApiTest.GOshopAPI.CategoryTreeListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductCategory[] CategoryTreeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/CategoryTreeList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.CategoryTreeListResponse> CategoryTreeListAsync(ApiTest.GOshopAPI.CategoryTreeListRequest request);
-        
-        // CODEGEN: Generating message contract since element name filter from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductToCategoryList", ReplyAction="*")]
-        ApiTest.GOshopAPI.ProductToCategoryListResponse ProductToCategoryList(ApiTest.GOshopAPI.ProductToCategoryListRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductCategory[]> CategoryTreeListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductToCategoryList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductToCategoryListResponse> ProductToCategoryListAsync(ApiTest.GOshopAPI.ProductToCategoryListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductToCategory[] ProductToCategoryList(ApiTest.GOshopAPI.CategoryToProductQuery filter);
         
-        // CODEGEN: Generating message contract since element name filter from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductToCategoryList", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductToCategory[]> ProductToCategoryListAsync(ApiTest.GOshopAPI.CategoryToProductQuery filter);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DescriptionsList", ReplyAction="*")]
-        ApiTest.GOshopAPI.DescriptionsListResponse DescriptionsList(ApiTest.GOshopAPI.DescriptionsListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductDescription[] DescriptionsList(ApiTest.GOshopAPI.DescriptionQuery filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DescriptionsList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.DescriptionsListResponse> DescriptionsListAsync(ApiTest.GOshopAPI.DescriptionsListRequest request);
-        
-        // CODEGEN: Generating message contract since element name filter from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImagesList", ReplyAction="*")]
-        ApiTest.GOshopAPI.ImagesListResponse ImagesList(ApiTest.GOshopAPI.ImagesListRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductDescription[]> DescriptionsListAsync(ApiTest.GOshopAPI.DescriptionQuery filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImagesList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ImagesListResponse> ImagesListAsync(ApiTest.GOshopAPI.ImagesListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductImage[] ImagesList(ApiTest.GOshopAPI.ImageQuery filter);
         
-        // CODEGEN: Generating message contract since element name imageBytes from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImagesList", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductImage[]> ImagesListAsync(ApiTest.GOshopAPI.ImageQuery filter);
+        
+        // CODEGEN: Parameter 'imageBytes' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageAdd", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ApiTest.GOshopAPI.ImageAddResponse ImageAdd(ApiTest.GOshopAPI.ImageAddRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageAdd", ReplyAction="*")]
         System.Threading.Tasks.Task<ApiTest.GOshopAPI.ImageAddResponse> ImageAddAsync(ApiTest.GOshopAPI.ImageAddRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageRemove", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         void ImageRemove(int productPictureId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ImageRemove", ReplyAction="*")]
         System.Threading.Tasks.Task ImageRemoveAsync(int productPictureId);
         
-        // CODEGEN: Generating message contract since element name fullHtmlDescription from namespace http://goshop.pl/soapapi is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DescriptionAddOrUpdate", ReplyAction="*")]
-        ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse DescriptionAddOrUpdate(ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void DescriptionAddOrUpdate(int productId, string fullHtmlDescription);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/DescriptionAddOrUpdate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse> DescriptionAddOrUpdateAsync(ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest request);
+        System.Threading.Tasks.Task DescriptionAddOrUpdateAsync(int productId, string fullHtmlDescription);
         
-        // CODEGEN: Generating message contract since element name filter from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/TraitsUpdate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void TraitsUpdate(ApiTest.GOshopAPI.TraitUpdateStruct request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/TraitsUpdate", ReplyAction="*")]
+        System.Threading.Tasks.Task TraitsUpdateAsync(ApiTest.GOshopAPI.TraitUpdateStruct request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OptionsList", ReplyAction="*")]
-        ApiTest.GOshopAPI.OptionsListResponse OptionsList(ApiTest.GOshopAPI.OptionsListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductOption[] OptionsList(ApiTest.GOshopAPI.OptionQuery filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OptionsList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionsListResponse> OptionsListAsync(ApiTest.GOshopAPI.OptionsListRequest request);
-        
-        // CODEGEN: Generating message contract since element name request from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/AddBasicOption", ReplyAction="*")]
-        ApiTest.GOshopAPI.AddBasicOptionResponse AddBasicOption(ApiTest.GOshopAPI.AddBasicOptionRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductOption[]> OptionsListAsync(ApiTest.GOshopAPI.OptionQuery filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/AddBasicOption", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddBasicOptionResponse> AddBasicOptionAsync(ApiTest.GOshopAPI.AddBasicOptionRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductOption AddBasicOption(ApiTest.GOshopAPI.OptionAddRequest request);
         
-        // CODEGEN: Generating message contract since element name request from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/AddBasicOption", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductOption> AddBasicOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/AddVariantOption", ReplyAction="*")]
-        ApiTest.GOshopAPI.AddVariantOptionResponse AddVariantOption(ApiTest.GOshopAPI.AddVariantOptionRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductOption AddVariantOption(ApiTest.GOshopAPI.OptionAddRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/AddVariantOption", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddVariantOptionResponse> AddVariantOptionAsync(ApiTest.GOshopAPI.AddVariantOptionRequest request);
-        
-        // CODEGEN: Generating message contract since element name requestBatch from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OptionsStockAndPriceUpdate", ReplyAction="*")]
-        ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse OptionsStockAndPriceUpdate(ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductOption> AddVariantOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OptionsStockAndPriceUpdate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse> OptionsStockAndPriceUpdateAsync(ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.OptionUpdateResponse[] OptionsStockAndPriceUpdate(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch);
         
-        // CODEGEN: Generating message contract since element name optionIdToRemove from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OptionsStockAndPriceUpdate", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionUpdateResponse[]> OptionsStockAndPriceUpdateAsync(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/RemoveOptions", ReplyAction="*")]
-        ApiTest.GOshopAPI.RemoveOptionsResponse RemoveOptions(ApiTest.GOshopAPI.RemoveOptionsRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void RemoveOptions(int[] optionIdToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/RemoveOptions", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.RemoveOptionsResponse> RemoveOptionsAsync(ApiTest.GOshopAPI.RemoveOptionsRequest request);
-        
-        // CODEGEN: Generating message contract since element name filter from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductsList", ReplyAction="*")]
-        ApiTest.GOshopAPI.ProductsListResponse ProductsList(ApiTest.GOshopAPI.ProductsListRequest request);
+        System.Threading.Tasks.Task RemoveOptionsAsync(int[] optionIdToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductsList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductsListResponse> ProductsListAsync(ApiTest.GOshopAPI.ProductsListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.Product[] ProductsList(ApiTest.GOshopAPI.ProductQuery filter);
         
-        // CODEGEN: Generating message contract since element name product from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductsList", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.Product[]> ProductsListAsync(ApiTest.GOshopAPI.ProductQuery filter);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductAdd", ReplyAction="*")]
-        ApiTest.GOshopAPI.ProductAddResponse ProductAdd(ApiTest.GOshopAPI.ProductAddRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int ProductAdd(ApiTest.GOshopAPI.ProductAddStruct product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductAdd", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductAddResponse> ProductAddAsync(ApiTest.GOshopAPI.ProductAddRequest request);
-        
-        // CODEGEN: Generating message contract since element name productUpdateBatch from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductUpdate", ReplyAction="*")]
-        ApiTest.GOshopAPI.ProductUpdateResponse ProductUpdate(ApiTest.GOshopAPI.ProductUpdateRequest request);
+        System.Threading.Tasks.Task<int> ProductAddAsync(ApiTest.GOshopAPI.ProductAddStruct product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductUpdate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductUpdateResponse> ProductUpdateAsync(ApiTest.GOshopAPI.ProductUpdateRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductUpdateResponse[] ProductUpdate(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch);
         
-        // CODEGEN: Generating message contract since element name ProducersListResult from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProductUpdate", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductUpdateResponse[]> ProductUpdateAsync(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProducersList", ReplyAction="*")]
-        ApiTest.GOshopAPI.ProducersListResponse ProducersList(ApiTest.GOshopAPI.ProducersListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductProducer[] ProducersList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProducersList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProducersListResponse> ProducersListAsync(ApiTest.GOshopAPI.ProducersListRequest request);
-        
-        // CODEGEN: Generating message contract since element name producerName from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProducerAdd", ReplyAction="*")]
-        ApiTest.GOshopAPI.ProducerAddResponse ProducerAdd(ApiTest.GOshopAPI.ProducerAddRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductProducer[]> ProducersListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProducerAdd", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProducerAddResponse> ProducerAddAsync(ApiTest.GOshopAPI.ProducerAddRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductProducer[] ProducerAdd(string producerName);
         
-        // CODEGEN: Generating message contract since element name PingResult from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/ProducerAdd", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductProducer[]> ProducerAddAsync(string producerName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/Ping", ReplyAction="*")]
-        ApiTest.GOshopAPI.PingResponse Ping(ApiTest.GOshopAPI.PingRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Ping();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/Ping", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.PingResponse> PingAsync(ApiTest.GOshopAPI.PingRequest request);
-        
-        // CODEGEN: Generating message contract since element name filter from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrdersList", ReplyAction="*")]
-        ApiTest.GOshopAPI.OrdersListResponse OrdersList(ApiTest.GOshopAPI.OrdersListRequest request);
+        System.Threading.Tasks.Task<string> PingAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrdersList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrdersListResponse> OrdersListAsync(ApiTest.GOshopAPI.OrdersListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.Order[] OrdersList(ApiTest.GOshopAPI.OrderQuery filter);
         
-        // CODEGEN: Generating message contract since element name OrdersStatesListResult from namespace http://goshop.pl/soapapi is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrdersList", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.Order[]> OrdersListAsync(ApiTest.GOshopAPI.OrderQuery filter);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrdersStatesList", ReplyAction="*")]
-        ApiTest.GOshopAPI.OrdersStatesListResponse OrdersStatesList(ApiTest.GOshopAPI.OrdersStatesListRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.OrderState[] OrdersStatesList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrdersStatesList", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrdersStatesListResponse> OrdersStatesListAsync(ApiTest.GOshopAPI.OrdersStatesListRequest request);
-        
-        // CODEGEN: Generating message contract since element name updateRequest from namespace http://goshop.pl/soapapi is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrderUpdate", ReplyAction="*")]
-        ApiTest.GOshopAPI.OrderUpdateResponse OrderUpdate(ApiTest.GOshopAPI.OrderUpdateRequest request);
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrderState[]> OrdersStatesListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrderUpdate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrderUpdateResponse> OrderUpdateAsync(ApiTest.GOshopAPI.OrderUpdateRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool OrderUpdate(ApiTest.GOshopAPI.OrderUpdateQuery updateRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OrderUpdate", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> OrderUpdateAsync(ApiTest.GOshopAPI.OrderUpdateQuery updateRequest);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductFeature : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ProductFeatureDictionary[] dictionariesField;
+        
+        private string featureNameField;
+        
+        private int featureIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public ProductFeatureDictionary[] Dictionaries {
+            get {
+                return this.dictionariesField;
+            }
+            set {
+                this.dictionariesField = value;
+                this.RaisePropertyChanged("Dictionaries");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string FeatureName {
+            get {
+                return this.featureNameField;
+            }
+            set {
+                this.featureNameField = value;
+                this.RaisePropertyChanged("FeatureName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int FeatureId {
+            get {
+                return this.featureIdField;
+            }
+            set {
+                this.featureIdField = value;
+                this.RaisePropertyChanged("FeatureId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductFeatureDictionary : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string featureNameField;
+        
+        private string dictionaryValueField;
+        
+        private int featureIdField;
+        
+        private int dictionaryIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FeatureName {
+            get {
+                return this.featureNameField;
+            }
+            set {
+                this.featureNameField = value;
+                this.RaisePropertyChanged("FeatureName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DictionaryValue {
+            get {
+                return this.dictionaryValueField;
+            }
+            set {
+                this.dictionaryValueField = value;
+                this.RaisePropertyChanged("DictionaryValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int FeatureId {
+            get {
+                return this.featureIdField;
+            }
+            set {
+                this.featureIdField = value;
+                this.RaisePropertyChanged("FeatureId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int DictionaryId {
+            get {
+                return this.dictionaryIdField;
+            }
+            set {
+                this.dictionaryIdField = value;
+                this.RaisePropertyChanged("DictionaryId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OrderUpdateQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int orderIdField;
+        
+        private System.Nullable<int> newStateIdField;
+        
+        private string newShippingNumberField;
+        
+        private string newOuterSystemIDField;
+        
+        private string newOuterSystemContentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int OrderId {
+            get {
+                return this.orderIdField;
+            }
+            set {
+                this.orderIdField = value;
+                this.RaisePropertyChanged("OrderId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<int> NewStateId {
+            get {
+                return this.newStateIdField;
+            }
+            set {
+                this.newStateIdField = value;
+                this.RaisePropertyChanged("NewStateId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string NewShippingNumber {
+            get {
+                return this.newShippingNumberField;
+            }
+            set {
+                this.newShippingNumberField = value;
+                this.RaisePropertyChanged("NewShippingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string NewOuterSystemID {
+            get {
+                return this.newOuterSystemIDField;
+            }
+            set {
+                this.newOuterSystemIDField = value;
+                this.RaisePropertyChanged("NewOuterSystemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NewOuterSystemContent {
+            get {
+                return this.newOuterSystemContentField;
+            }
+            set {
+                this.newOuterSystemContentField = value;
+                this.RaisePropertyChanged("NewOuterSystemContent");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OrderState : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string stateNameField;
+        
+        private int stateIdField;
+        
+        private int stockActionTypeField;
+        
+        private int stateTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string StateName {
+            get {
+                return this.stateNameField;
+            }
+            set {
+                this.stateNameField = value;
+                this.RaisePropertyChanged("StateName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int StateId {
+            get {
+                return this.stateIdField;
+            }
+            set {
+                this.stateIdField = value;
+                this.RaisePropertyChanged("StateId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int StockActionType {
+            get {
+                return this.stockActionTypeField;
+            }
+            set {
+                this.stockActionTypeField = value;
+                this.RaisePropertyChanged("StockActionType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int StateType {
+            get {
+                return this.stateTypeField;
+            }
+            set {
+                this.stateTypeField = value;
+                this.RaisePropertyChanged("StateType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class DeliveryDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int deliveryIdField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int DeliveryId {
+            get {
+                return this.deliveryIdField;
+            }
+            set {
+                this.deliveryIdField = value;
+                this.RaisePropertyChanged("DeliveryId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class PaymentDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int paymentIdField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int PaymentId {
+            get {
+                return this.paymentIdField;
+            }
+            set {
+                this.paymentIdField = value;
+                this.RaisePropertyChanged("PaymentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OrderItem : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal taxRateField;
+        
+        private System.Nullable<decimal> appliedDiscountPercentField;
+        
+        private string nameField;
+        
+        private string sKUField;
+        
+        private string eANField;
+        
+        private decimal unitWeightField;
+        
+        private decimal totalWeightField;
+        
+        private int productIdField;
+        
+        private int optionIdField;
+        
+        private decimal unitPriceGrossField;
+        
+        private int quantityField;
+        
+        private decimal totalPriceGrossField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public decimal TaxRate {
+            get {
+                return this.taxRateField;
+            }
+            set {
+                this.taxRateField = value;
+                this.RaisePropertyChanged("TaxRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> AppliedDiscountPercent {
+            get {
+                return this.appliedDiscountPercentField;
+            }
+            set {
+                this.appliedDiscountPercentField = value;
+                this.RaisePropertyChanged("AppliedDiscountPercent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string SKU {
+            get {
+                return this.sKUField;
+            }
+            set {
+                this.sKUField = value;
+                this.RaisePropertyChanged("SKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string EAN {
+            get {
+                return this.eANField;
+            }
+            set {
+                this.eANField = value;
+                this.RaisePropertyChanged("EAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal UnitWeight {
+            get {
+                return this.unitWeightField;
+            }
+            set {
+                this.unitWeightField = value;
+                this.RaisePropertyChanged("UnitWeight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal TotalWeight {
+            get {
+                return this.totalWeightField;
+            }
+            set {
+                this.totalWeightField = value;
+                this.RaisePropertyChanged("TotalWeight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public int OptionId {
+            get {
+                return this.optionIdField;
+            }
+            set {
+                this.optionIdField = value;
+                this.RaisePropertyChanged("OptionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public decimal UnitPriceGross {
+            get {
+                return this.unitPriceGrossField;
+            }
+            set {
+                this.unitPriceGrossField = value;
+                this.RaisePropertyChanged("UnitPriceGross");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public int Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public decimal TotalPriceGross {
+            get {
+                return this.totalPriceGrossField;
+            }
+            set {
+                this.totalPriceGrossField = value;
+                this.RaisePropertyChanged("TotalPriceGross");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class Order : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private OrderItem[] itemsField;
+        
+        private decimal shipmentTaxRateField;
+        
+        private PaymentDetail paymentField;
+        
+        private DeliveryDetail deliveryField;
+        
+        private string outerSystemIdField;
+        
+        private string billingDocumentTypeField;
+        
+        private int stateIdField;
+        
+        private int orderIdField;
+        
+        private string emailField;
+        
+        private string billingTaxIdentifierField;
+        
+        private string billingCompanyField;
+        
+        private string billingSecondNameField;
+        
+        private string billingFirstNameField;
+        
+        private string billingAddresField;
+        
+        private string billingAddres2Field;
+        
+        private string billingAddres3Field;
+        
+        private decimal orderWeightField;
+        
+        private string billingCityField;
+        
+        private string billingPostalField;
+        
+        private string billingPhoneField;
+        
+        private string deliveryFirstNameField;
+        
+        private string deliveryLastNameField;
+        
+        private string deliveryAddressField;
+        
+        private string deliveryAddress2Field;
+        
+        private string deliveryAddress3Field;
+        
+        private string deliveryCityField;
+        
+        private string deliveryPostalCodeField;
+        
+        private string deliveryPhoneField;
+        
+        private string shippingNumberField;
+        
+        private string pickupPointJSONField;
+        
+        private System.DateTime createdOnField;
+        
+        private string customerNotesField;
+        
+        private decimal orderPaymentBalanceField;
+        
+        private decimal shipmentPriceGrossField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public OrderItem[] Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+                this.RaisePropertyChanged("Items");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal ShipmentTaxRate {
+            get {
+                return this.shipmentTaxRateField;
+            }
+            set {
+                this.shipmentTaxRateField = value;
+                this.RaisePropertyChanged("ShipmentTaxRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PaymentDetail Payment {
+            get {
+                return this.paymentField;
+            }
+            set {
+                this.paymentField = value;
+                this.RaisePropertyChanged("Payment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public DeliveryDetail Delivery {
+            get {
+                return this.deliveryField;
+            }
+            set {
+                this.deliveryField = value;
+                this.RaisePropertyChanged("Delivery");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string OuterSystemId {
+            get {
+                return this.outerSystemIdField;
+            }
+            set {
+                this.outerSystemIdField = value;
+                this.RaisePropertyChanged("OuterSystemId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string BillingDocumentType {
+            get {
+                return this.billingDocumentTypeField;
+            }
+            set {
+                this.billingDocumentTypeField = value;
+                this.RaisePropertyChanged("BillingDocumentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int StateId {
+            get {
+                return this.stateIdField;
+            }
+            set {
+                this.stateIdField = value;
+                this.RaisePropertyChanged("StateId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int OrderId {
+            get {
+                return this.orderIdField;
+            }
+            set {
+                this.orderIdField = value;
+                this.RaisePropertyChanged("OrderId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string BillingTaxIdentifier {
+            get {
+                return this.billingTaxIdentifierField;
+            }
+            set {
+                this.billingTaxIdentifierField = value;
+                this.RaisePropertyChanged("BillingTaxIdentifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string BillingCompany {
+            get {
+                return this.billingCompanyField;
+            }
+            set {
+                this.billingCompanyField = value;
+                this.RaisePropertyChanged("BillingCompany");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string BillingSecondName {
+            get {
+                return this.billingSecondNameField;
+            }
+            set {
+                this.billingSecondNameField = value;
+                this.RaisePropertyChanged("BillingSecondName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string BillingFirstName {
+            get {
+                return this.billingFirstNameField;
+            }
+            set {
+                this.billingFirstNameField = value;
+                this.RaisePropertyChanged("BillingFirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string BillingAddres {
+            get {
+                return this.billingAddresField;
+            }
+            set {
+                this.billingAddresField = value;
+                this.RaisePropertyChanged("BillingAddres");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string BillingAddres2 {
+            get {
+                return this.billingAddres2Field;
+            }
+            set {
+                this.billingAddres2Field = value;
+                this.RaisePropertyChanged("BillingAddres2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string BillingAddres3 {
+            get {
+                return this.billingAddres3Field;
+            }
+            set {
+                this.billingAddres3Field = value;
+                this.RaisePropertyChanged("BillingAddres3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public decimal OrderWeight {
+            get {
+                return this.orderWeightField;
+            }
+            set {
+                this.orderWeightField = value;
+                this.RaisePropertyChanged("OrderWeight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string BillingCity {
+            get {
+                return this.billingCityField;
+            }
+            set {
+                this.billingCityField = value;
+                this.RaisePropertyChanged("BillingCity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string BillingPostal {
+            get {
+                return this.billingPostalField;
+            }
+            set {
+                this.billingPostalField = value;
+                this.RaisePropertyChanged("BillingPostal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string BillingPhone {
+            get {
+                return this.billingPhoneField;
+            }
+            set {
+                this.billingPhoneField = value;
+                this.RaisePropertyChanged("BillingPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string DeliveryFirstName {
+            get {
+                return this.deliveryFirstNameField;
+            }
+            set {
+                this.deliveryFirstNameField = value;
+                this.RaisePropertyChanged("DeliveryFirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string DeliveryLastName {
+            get {
+                return this.deliveryLastNameField;
+            }
+            set {
+                this.deliveryLastNameField = value;
+                this.RaisePropertyChanged("DeliveryLastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string DeliveryAddress {
+            get {
+                return this.deliveryAddressField;
+            }
+            set {
+                this.deliveryAddressField = value;
+                this.RaisePropertyChanged("DeliveryAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string DeliveryAddress2 {
+            get {
+                return this.deliveryAddress2Field;
+            }
+            set {
+                this.deliveryAddress2Field = value;
+                this.RaisePropertyChanged("DeliveryAddress2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string DeliveryAddress3 {
+            get {
+                return this.deliveryAddress3Field;
+            }
+            set {
+                this.deliveryAddress3Field = value;
+                this.RaisePropertyChanged("DeliveryAddress3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public string DeliveryCity {
+            get {
+                return this.deliveryCityField;
+            }
+            set {
+                this.deliveryCityField = value;
+                this.RaisePropertyChanged("DeliveryCity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string DeliveryPostalCode {
+            get {
+                return this.deliveryPostalCodeField;
+            }
+            set {
+                this.deliveryPostalCodeField = value;
+                this.RaisePropertyChanged("DeliveryPostalCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public string DeliveryPhone {
+            get {
+                return this.deliveryPhoneField;
+            }
+            set {
+                this.deliveryPhoneField = value;
+                this.RaisePropertyChanged("DeliveryPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public string ShippingNumber {
+            get {
+                return this.shippingNumberField;
+            }
+            set {
+                this.shippingNumberField = value;
+                this.RaisePropertyChanged("ShippingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        public string PickupPointJSON {
+            get {
+                return this.pickupPointJSONField;
+            }
+            set {
+                this.pickupPointJSONField = value;
+                this.RaisePropertyChanged("PickupPointJSON");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public System.DateTime CreatedOn {
+            get {
+                return this.createdOnField;
+            }
+            set {
+                this.createdOnField = value;
+                this.RaisePropertyChanged("CreatedOn");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string CustomerNotes {
+            get {
+                return this.customerNotesField;
+            }
+            set {
+                this.customerNotesField = value;
+                this.RaisePropertyChanged("CustomerNotes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public decimal OrderPaymentBalance {
+            get {
+                return this.orderPaymentBalanceField;
+            }
+            set {
+                this.orderPaymentBalanceField = value;
+                this.RaisePropertyChanged("OrderPaymentBalance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public decimal ShipmentPriceGross {
+            get {
+                return this.shipmentPriceGrossField;
+            }
+            set {
+                this.shipmentPriceGrossField = value;
+                this.RaisePropertyChanged("ShipmentPriceGross");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OrderQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<bool> haveShippingNumberField;
+        
+        private System.Nullable<bool> haveOuterSystemIdField;
+        
+        private System.Nullable<System.DateTime> createdLaterThanField;
+        
+        private System.Nullable<System.DateTime> createdSoonerThanField;
+        
+        private int[] inStateIdField;
+        
+        private string withOuterSystemIdField;
+        
+        private int pageSizeField;
+        
+        private int pageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<bool> HaveShippingNumber {
+            get {
+                return this.haveShippingNumberField;
+            }
+            set {
+                this.haveShippingNumberField = value;
+                this.RaisePropertyChanged("HaveShippingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<bool> HaveOuterSystemId {
+            get {
+                return this.haveOuterSystemIdField;
+            }
+            set {
+                this.haveOuterSystemIdField = value;
+                this.RaisePropertyChanged("HaveOuterSystemId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> CreatedLaterThan {
+            get {
+                return this.createdLaterThanField;
+            }
+            set {
+                this.createdLaterThanField = value;
+                this.RaisePropertyChanged("CreatedLaterThan");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> CreatedSoonerThan {
+            get {
+                return this.createdSoonerThanField;
+            }
+            set {
+                this.createdSoonerThanField = value;
+                this.RaisePropertyChanged("CreatedSoonerThan");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
+        public int[] InStateId {
+            get {
+                return this.inStateIdField;
+            }
+            set {
+                this.inStateIdField = value;
+                this.RaisePropertyChanged("InStateId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string WithOuterSystemId {
+            get {
+                return this.withOuterSystemIdField;
+            }
+            set {
+                this.withOuterSystemIdField = value;
+                this.RaisePropertyChanged("WithOuterSystemId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductUpdateResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool fieldsChangedField;
+        
+        private bool htmlDescriptionChangedField;
+        
+        private bool itemWasFoundField;
+        
+        private int productIdField;
+        
+        private string messageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool FieldsChanged {
+            get {
+                return this.fieldsChangedField;
+            }
+            set {
+                this.fieldsChangedField = value;
+                this.RaisePropertyChanged("FieldsChanged");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool HtmlDescriptionChanged {
+            get {
+                return this.htmlDescriptionChangedField;
+            }
+            set {
+                this.htmlDescriptionChangedField = value;
+                this.RaisePropertyChanged("HtmlDescriptionChanged");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool ItemWasFound {
+            get {
+                return this.itemWasFoundField;
+            }
+            set {
+                this.itemWasFoundField = value;
+                this.RaisePropertyChanged("ItemWasFound");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("Message");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductUpdateStruct : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int productIdField;
+        
+        private System.Nullable<int> taxRateField;
+        
+        private System.Nullable<bool> activeField;
+        
+        private string nameField;
+        
+        private string producerNameField;
+        
+        private string fullHtmlDescriptionField;
+        
+        private string shortDescriptionField;
+        
+        private int[] categoryIdField;
+        
+        private int[] removeCategoryIdField;
+        
+        private System.Nullable<decimal> weightField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<int> TaxRate {
+            get {
+                return this.taxRateField;
+            }
+            set {
+                this.taxRateField = value;
+                this.RaisePropertyChanged("TaxRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<bool> Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+                this.RaisePropertyChanged("Active");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ProducerName {
+            get {
+                return this.producerNameField;
+            }
+            set {
+                this.producerNameField = value;
+                this.RaisePropertyChanged("ProducerName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string FullHtmlDescription {
+            get {
+                return this.fullHtmlDescriptionField;
+            }
+            set {
+                this.fullHtmlDescriptionField = value;
+                this.RaisePropertyChanged("FullHtmlDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string ShortDescription {
+            get {
+                return this.shortDescriptionField;
+            }
+            set {
+                this.shortDescriptionField = value;
+                this.RaisePropertyChanged("ShortDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        public int[] CategoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                this.categoryIdField = value;
+                this.RaisePropertyChanged("CategoryId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
+        public int[] RemoveCategoryId {
+            get {
+                return this.removeCategoryIdField;
+            }
+            set {
+                this.removeCategoryIdField = value;
+                this.RaisePropertyChanged("RemoveCategoryId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<decimal> Weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                this.weightField = value;
+                this.RaisePropertyChanged("Weight");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductAddStruct : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool activeField;
+        
+        private string nameField;
+        
+        private string baseSKUField;
+        
+        private string baseEANField;
+        
+        private decimal weightField;
+        
+        private string producerNameField;
+        
+        private int taxRateField;
+        
+        private string fullHtmlDescriptionField;
+        
+        private string shortDescriptionField;
+        
+        private int[] categoryIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+                this.RaisePropertyChanged("Active");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string BaseSKU {
+            get {
+                return this.baseSKUField;
+            }
+            set {
+                this.baseSKUField = value;
+                this.RaisePropertyChanged("BaseSKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string BaseEAN {
+            get {
+                return this.baseEANField;
+            }
+            set {
+                this.baseEANField = value;
+                this.RaisePropertyChanged("BaseEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal Weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                this.weightField = value;
+                this.RaisePropertyChanged("Weight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string ProducerName {
+            get {
+                return this.producerNameField;
+            }
+            set {
+                this.producerNameField = value;
+                this.RaisePropertyChanged("ProducerName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int TaxRate {
+            get {
+                return this.taxRateField;
+            }
+            set {
+                this.taxRateField = value;
+                this.RaisePropertyChanged("TaxRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string FullHtmlDescription {
+            get {
+                return this.fullHtmlDescriptionField;
+            }
+            set {
+                this.fullHtmlDescriptionField = value;
+                this.RaisePropertyChanged("FullHtmlDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string ShortDescription {
+            get {
+                return this.shortDescriptionField;
+            }
+            set {
+                this.shortDescriptionField = value;
+                this.RaisePropertyChanged("ShortDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
+        public int[] CategoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                this.categoryIdField = value;
+                this.RaisePropertyChanged("CategoryId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductProducer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int producerIdField;
+        
+        private string producerNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProducerId {
+            get {
+                return this.producerIdField;
+            }
+            set {
+                this.producerIdField = value;
+                this.RaisePropertyChanged("ProducerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ProducerName {
+            get {
+                return this.producerNameField;
+            }
+            set {
+                this.producerNameField = value;
+                this.RaisePropertyChanged("ProducerName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class Product : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> producerIdField;
+        
+        private ProductProducer producerField;
+        
+        private ProductImage[] imagesListField;
+        
+        private ProductOption[] optionsListField;
+        
+        private decimal weightField;
+        
+        private string baseSKUField;
+        
+        private string baseEANField;
+        
+        private string nameField;
+        
+        private bool activeField;
+        
+        private string shortDescriptionField;
+        
+        private System.Nullable<int> availabilityStateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> ProducerId {
+            get {
+                return this.producerIdField;
+            }
+            set {
+                this.producerIdField = value;
+                this.RaisePropertyChanged("ProducerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ProductProducer Producer {
+            get {
+                return this.producerField;
+            }
+            set {
+                this.producerField = value;
+                this.RaisePropertyChanged("Producer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public ProductImage[] ImagesList {
+            get {
+                return this.imagesListField;
+            }
+            set {
+                this.imagesListField = value;
+                this.RaisePropertyChanged("ImagesList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        public ProductOption[] OptionsList {
+            get {
+                return this.optionsListField;
+            }
+            set {
+                this.optionsListField = value;
+                this.RaisePropertyChanged("OptionsList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal Weight {
+            get {
+                return this.weightField;
+            }
+            set {
+                this.weightField = value;
+                this.RaisePropertyChanged("Weight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string BaseSKU {
+            get {
+                return this.baseSKUField;
+            }
+            set {
+                this.baseSKUField = value;
+                this.RaisePropertyChanged("BaseSKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string BaseEAN {
+            get {
+                return this.baseEANField;
+            }
+            set {
+                this.baseEANField = value;
+                this.RaisePropertyChanged("BaseEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public bool Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+                this.RaisePropertyChanged("Active");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string ShortDescription {
+            get {
+                return this.shortDescriptionField;
+            }
+            set {
+                this.shortDescriptionField = value;
+                this.RaisePropertyChanged("ShortDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public System.Nullable<int> AvailabilityState {
+            get {
+                return this.availabilityStateField;
+            }
+            set {
+                this.availabilityStateField = value;
+                this.RaisePropertyChanged("AvailabilityState");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductImage : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int pictureIdField;
+        
+        private int productIdField;
+        
+        private string fileNameField;
+        
+        private string imageUrlField;
+        
+        private string sourceImageHashField;
+        
+        private int sortField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int PictureId {
+            get {
+                return this.pictureIdField;
+            }
+            set {
+                this.pictureIdField = value;
+                this.RaisePropertyChanged("PictureId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string FileName {
+            get {
+                return this.fileNameField;
+            }
+            set {
+                this.fileNameField = value;
+                this.RaisePropertyChanged("FileName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ImageUrl {
+            get {
+                return this.imageUrlField;
+            }
+            set {
+                this.imageUrlField = value;
+                this.RaisePropertyChanged("ImageUrl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SourceImageHash {
+            get {
+                return this.sourceImageHashField;
+            }
+            set {
+                this.sourceImageHashField = value;
+                this.RaisePropertyChanged("SourceImageHash");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int Sort {
+            get {
+                return this.sortField;
+            }
+            set {
+                this.sortField = value;
+                this.RaisePropertyChanged("Sort");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductOption : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ProductFeatureDictionary[] dictionariesField;
+        
+        private int productIdField;
+        
+        private int optionIdField;
+        
+        private string eANField;
+        
+        private string sKUField;
+        
+        private System.Nullable<decimal> catalogPriceGrossField;
+        
+        private int stockField;
+        
+        private decimal priceGrossField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public ProductFeatureDictionary[] Dictionaries {
+            get {
+                return this.dictionariesField;
+            }
+            set {
+                this.dictionariesField = value;
+                this.RaisePropertyChanged("Dictionaries");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int OptionId {
+            get {
+                return this.optionIdField;
+            }
+            set {
+                this.optionIdField = value;
+                this.RaisePropertyChanged("OptionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string EAN {
+            get {
+                return this.eANField;
+            }
+            set {
+                this.eANField = value;
+                this.RaisePropertyChanged("EAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SKU {
+            get {
+                return this.sKUField;
+            }
+            set {
+                this.sKUField = value;
+                this.RaisePropertyChanged("SKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> CatalogPriceGross {
+            get {
+                return this.catalogPriceGrossField;
+            }
+            set {
+                this.catalogPriceGrossField = value;
+                this.RaisePropertyChanged("CatalogPriceGross");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int Stock {
+            get {
+                return this.stockField;
+            }
+            set {
+                this.stockField = value;
+                this.RaisePropertyChanged("Stock");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public decimal PriceGross {
+            get {
+                return this.priceGrossField;
+            }
+            set {
+                this.priceGrossField = value;
+                this.RaisePropertyChanged("PriceGross");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> categoryIdField;
+        
+        private System.Nullable<int> producerIdField;
+        
+        private System.Nullable<bool> includeProductImagesField;
+        
+        private System.Nullable<bool> includeProductOptionsField;
+        
+        private System.Nullable<bool> activeField;
+        
+        private int pageSizeField;
+        
+        private int pageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> CategoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                this.categoryIdField = value;
+                this.RaisePropertyChanged("CategoryId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<int> ProducerId {
+            get {
+                return this.producerIdField;
+            }
+            set {
+                this.producerIdField = value;
+                this.RaisePropertyChanged("ProducerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<bool> IncludeProductImages {
+            get {
+                return this.includeProductImagesField;
+            }
+            set {
+                this.includeProductImagesField = value;
+                this.RaisePropertyChanged("IncludeProductImages");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<bool> IncludeProductOptions {
+            get {
+                return this.includeProductOptionsField;
+            }
+            set {
+                this.includeProductOptionsField = value;
+                this.RaisePropertyChanged("IncludeProductOptions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<bool> Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+                this.RaisePropertyChanged("Active");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OptionUpdateResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool stockChangedField;
+        
+        private bool fieldsChangedField;
+        
+        private bool itemWasFoundField;
+        
+        private System.Nullable<int> optionIdField;
+        
+        private System.Nullable<int> productIdField;
+        
+        private string sKUField;
+        
+        private string eANField;
+        
+        private string messageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool StockChanged {
+            get {
+                return this.stockChangedField;
+            }
+            set {
+                this.stockChangedField = value;
+                this.RaisePropertyChanged("StockChanged");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool FieldsChanged {
+            get {
+                return this.fieldsChangedField;
+            }
+            set {
+                this.fieldsChangedField = value;
+                this.RaisePropertyChanged("FieldsChanged");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool ItemWasFound {
+            get {
+                return this.itemWasFoundField;
+            }
+            set {
+                this.itemWasFoundField = value;
+                this.RaisePropertyChanged("ItemWasFound");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<int> OptionId {
+            get {
+                return this.optionIdField;
+            }
+            set {
+                this.optionIdField = value;
+                this.RaisePropertyChanged("OptionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<int> ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string SKU {
+            get {
+                return this.sKUField;
+            }
+            set {
+                this.sKUField = value;
+                this.RaisePropertyChanged("SKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string EAN {
+            get {
+                return this.eANField;
+            }
+            set {
+                this.eANField = value;
+                this.RaisePropertyChanged("EAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("Message");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OptionUpdateRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> updateByIdField;
+        
+        private string updateByEANField;
+        
+        private string updateBySKUField;
+        
+        private System.Nullable<int> stockField;
+        
+        private System.Nullable<decimal> priceGrossField;
+        
+        private System.Nullable<decimal> catalogPriceGrossField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> UpdateById {
+            get {
+                return this.updateByIdField;
+            }
+            set {
+                this.updateByIdField = value;
+                this.RaisePropertyChanged("UpdateById");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string UpdateByEAN {
+            get {
+                return this.updateByEANField;
+            }
+            set {
+                this.updateByEANField = value;
+                this.RaisePropertyChanged("UpdateByEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string UpdateBySKU {
+            get {
+                return this.updateBySKUField;
+            }
+            set {
+                this.updateBySKUField = value;
+                this.RaisePropertyChanged("UpdateBySKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<int> Stock {
+            get {
+                return this.stockField;
+            }
+            set {
+                this.stockField = value;
+                this.RaisePropertyChanged("Stock");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> PriceGross {
+            get {
+                return this.priceGrossField;
+            }
+            set {
+                this.priceGrossField = value;
+                this.RaisePropertyChanged("PriceGross");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> CatalogPriceGross {
+            get {
+                return this.catalogPriceGrossField;
+            }
+            set {
+                this.catalogPriceGrossField = value;
+                this.RaisePropertyChanged("CatalogPriceGross");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OptionDictionaryDefinition : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string featureNameField;
+        
+        private string dictionaryNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FeatureName {
+            get {
+                return this.featureNameField;
+            }
+            set {
+                this.featureNameField = value;
+                this.RaisePropertyChanged("FeatureName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DictionaryName {
+            get {
+                return this.dictionaryNameField;
+            }
+            set {
+                this.dictionaryNameField = value;
+                this.RaisePropertyChanged("DictionaryName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OptionAddRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int productIdField;
+        
+        private string eANField;
+        
+        private string sKUField;
+        
+        private System.Nullable<decimal> catalogPriceGrossField;
+        
+        private int stockField;
+        
+        private decimal priceGrossField;
+        
+        private OptionDictionaryDefinition[] dictionariesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string EAN {
+            get {
+                return this.eANField;
+            }
+            set {
+                this.eANField = value;
+                this.RaisePropertyChanged("EAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string SKU {
+            get {
+                return this.sKUField;
+            }
+            set {
+                this.sKUField = value;
+                this.RaisePropertyChanged("SKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> CatalogPriceGross {
+            get {
+                return this.catalogPriceGrossField;
+            }
+            set {
+                this.catalogPriceGrossField = value;
+                this.RaisePropertyChanged("CatalogPriceGross");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int Stock {
+            get {
+                return this.stockField;
+            }
+            set {
+                this.stockField = value;
+                this.RaisePropertyChanged("Stock");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal PriceGross {
+            get {
+                return this.priceGrossField;
+            }
+            set {
+                this.priceGrossField = value;
+                this.RaisePropertyChanged("PriceGross");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        public OptionDictionaryDefinition[] Dictionaries {
+            get {
+                return this.dictionariesField;
+            }
+            set {
+                this.dictionariesField = value;
+                this.RaisePropertyChanged("Dictionaries");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class OptionQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int pageField;
+        
+        private int pageSizeField;
+        
+        private System.Nullable<bool> includeOptionDictionariesField;
+        
+        private string sKUField;
+        
+        private string eANField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<bool> IncludeOptionDictionaries {
+            get {
+                return this.includeOptionDictionariesField;
+            }
+            set {
+                this.includeOptionDictionariesField = value;
+                this.RaisePropertyChanged("IncludeOptionDictionaries");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string SKU {
+            get {
+                return this.sKUField;
+            }
+            set {
+                this.sKUField = value;
+                this.RaisePropertyChanged("SKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string EAN {
+            get {
+                return this.eANField;
+            }
+            set {
+                this.eANField = value;
+                this.RaisePropertyChanged("EAN");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductTrait : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string traitNameField;
+        
+        private string[] traitDictionariesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string TraitName {
+            get {
+                return this.traitNameField;
+            }
+            set {
+                this.traitNameField = value;
+                this.RaisePropertyChanged("TraitName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public string[] TraitDictionaries {
+            get {
+                return this.traitDictionariesField;
+            }
+            set {
+                this.traitDictionariesField = value;
+                this.RaisePropertyChanged("TraitDictionaries");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class TraitUpdateStruct : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int productIdField;
+        
+        private ProductTrait[] traitsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public ProductTrait[] Traits {
+            get {
+                return this.traitsField;
+            }
+            set {
+                this.traitsField = value;
+                this.RaisePropertyChanged("Traits");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ImageQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int pageSizeField;
+        
+        private int pageField;
+        
+        private int[] productIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public int[] ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductDescription : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int productIdField;
+        
+        private string fullHtmlDescriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string FullHtmlDescription {
+            get {
+                return this.fullHtmlDescriptionField;
+            }
+            set {
+                this.fullHtmlDescriptionField = value;
+                this.RaisePropertyChanged("FullHtmlDescription");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class DescriptionQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int[] productIdField;
+        
+        private int pageSizeField;
+        
+        private int pageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public int[] ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductToCategory : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int productIdField;
+        
+        private int categoryIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int CategoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                this.categoryIdField = value;
+                this.RaisePropertyChanged("CategoryId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class CategoryToProductQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> productIdField;
+        
+        private System.Nullable<int> categoryIdField;
+        
+        private int pageSizeField;
+        
+        private int pageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<int> CategoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                this.categoryIdField = value;
+                this.RaisePropertyChanged("CategoryId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductCategory : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> parentIdField;
+        
+        private string productCategoryNameField;
+        
+        private int productCategoryIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> ParentId {
+            get {
+                return this.parentIdField;
+            }
+            set {
+                this.parentIdField = value;
+                this.RaisePropertyChanged("ParentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ProductCategoryName {
+            get {
+                return this.productCategoryNameField;
+            }
+            set {
+                this.productCategoryNameField = value;
+                this.RaisePropertyChanged("ProductCategoryName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int ProductCategoryId {
+            get {
+                return this.productCategoryIdField;
+            }
+            set {
+                this.productCategoryIdField = value;
+                this.RaisePropertyChanged("ProductCategoryId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FeatureAddRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="FeatureAdd", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.FeatureAddRequestBody Body;
-        
-        public FeatureAddRequest() {
-        }
-        
-        public FeatureAddRequest(ApiTest.GOshopAPI.FeatureAddRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class FeatureAddRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string featureName;
-        
-        public FeatureAddRequestBody() {
-        }
-        
-        public FeatureAddRequestBody(string featureName) {
-            this.featureName = featureName;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FeatureAddResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="FeatureAddResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.FeatureAddResponseBody Body;
-        
-        public FeatureAddResponse() {
-        }
-        
-        public FeatureAddResponse(ApiTest.GOshopAPI.FeatureAddResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class FeatureAddResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int FeatureAddResult;
-        
-        public FeatureAddResponseBody() {
-        }
-        
-        public FeatureAddResponseBody(int FeatureAddResult) {
-            this.FeatureAddResult = FeatureAddResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DictionaryAddRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DictionaryAdd", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.DictionaryAddRequestBody Body;
-        
-        public DictionaryAddRequest() {
-        }
-        
-        public DictionaryAddRequest(ApiTest.GOshopAPI.DictionaryAddRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class DictionaryAddRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int featureId;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string dictionaryValue;
-        
-        public DictionaryAddRequestBody() {
-        }
-        
-        public DictionaryAddRequestBody(int featureId, string dictionaryValue) {
-            this.featureId = featureId;
-            this.dictionaryValue = dictionaryValue;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DictionaryAddResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DictionaryAddResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.DictionaryAddResponseBody Body;
-        
-        public DictionaryAddResponse() {
-        }
-        
-        public DictionaryAddResponse(ApiTest.GOshopAPI.DictionaryAddResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class DictionaryAddResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int DictionaryAddResult;
-        
-        public DictionaryAddResponseBody() {
-        }
-        
-        public DictionaryAddResponseBody(int DictionaryAddResult) {
-            this.DictionaryAddResult = DictionaryAddResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FeaturesAndDictionariesListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="FeaturesAndDictionariesList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.FeaturesAndDictionariesListRequestBody Body;
-        
-        public FeaturesAndDictionariesListRequest() {
-        }
-        
-        public FeaturesAndDictionariesListRequest(ApiTest.GOshopAPI.FeaturesAndDictionariesListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class FeaturesAndDictionariesListRequestBody {
-        
-        public FeaturesAndDictionariesListRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FeaturesAndDictionariesListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="FeaturesAndDictionariesListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.FeaturesAndDictionariesListResponseBody Body;
-        
-        public FeaturesAndDictionariesListResponse() {
-        }
-        
-        public FeaturesAndDictionariesListResponse(ApiTest.GOshopAPI.FeaturesAndDictionariesListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class FeaturesAndDictionariesListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductFeature[] FeaturesAndDictionariesListResult;
-        
-        public FeaturesAndDictionariesListResponseBody() {
-        }
-        
-        public FeaturesAndDictionariesListResponseBody(ApiTest.GOshopAPI.ProductFeature[] FeaturesAndDictionariesListResult) {
-            this.FeaturesAndDictionariesListResult = FeaturesAndDictionariesListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CategoryAdd", WrapperNamespace="http://goshop.pl/soapapi", IsWrapped=true)]
     public partial class CategoryAddRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CategoryAdd", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.CategoryAddRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=0)]
+        public string categoryName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=1)]
+        public int parentId;
         
         public CategoryAddRequest() {
         }
         
-        public CategoryAddRequest(ApiTest.GOshopAPI.CategoryAddRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class CategoryAddRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string categoryName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int parentId;
-        
-        public CategoryAddRequestBody() {
-        }
-        
-        public CategoryAddRequestBody(string categoryName, int parentId) {
+        public CategoryAddRequest(string categoryName, int parentId) {
             this.categoryName = categoryName;
             this.parentId = parentId;
         }
@@ -3737,33 +3312,17 @@ namespace ApiTest.GOshopAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CategoryAddResponse", WrapperNamespace="http://goshop.pl/soapapi", IsWrapped=true)]
     public partial class CategoryAddResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CategoryAddResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.CategoryAddResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> CategoryAddResult;
         
         public CategoryAddResponse() {
         }
         
-        public CategoryAddResponse(ApiTest.GOshopAPI.CategoryAddResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class CategoryAddResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public System.Nullable<int> CategoryAddResult;
-        
-        public CategoryAddResponseBody() {
-        }
-        
-        public CategoryAddResponseBody(System.Nullable<int> CategoryAddResult) {
+        public CategoryAddResponse(System.Nullable<int> CategoryAddResult) {
             this.CategoryAddResult = CategoryAddResult;
         }
     }
@@ -3771,304 +3330,23 @@ namespace ApiTest.GOshopAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CategoryTreeListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CategoryTreeList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.CategoryTreeListRequestBody Body;
-        
-        public CategoryTreeListRequest() {
-        }
-        
-        public CategoryTreeListRequest(ApiTest.GOshopAPI.CategoryTreeListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class CategoryTreeListRequestBody {
-        
-        public CategoryTreeListRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CategoryTreeListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CategoryTreeListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.CategoryTreeListResponseBody Body;
-        
-        public CategoryTreeListResponse() {
-        }
-        
-        public CategoryTreeListResponse(ApiTest.GOshopAPI.CategoryTreeListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class CategoryTreeListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductCategory[] CategoryTreeListResult;
-        
-        public CategoryTreeListResponseBody() {
-        }
-        
-        public CategoryTreeListResponseBody(ApiTest.GOshopAPI.ProductCategory[] CategoryTreeListResult) {
-            this.CategoryTreeListResult = CategoryTreeListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductToCategoryListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductToCategoryList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductToCategoryListRequestBody Body;
-        
-        public ProductToCategoryListRequest() {
-        }
-        
-        public ProductToCategoryListRequest(ApiTest.GOshopAPI.ProductToCategoryListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductToCategoryListRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.CategoryToProductQuery filter;
-        
-        public ProductToCategoryListRequestBody() {
-        }
-        
-        public ProductToCategoryListRequestBody(ApiTest.GOshopAPI.CategoryToProductQuery filter) {
-            this.filter = filter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductToCategoryListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductToCategoryListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductToCategoryListResponseBody Body;
-        
-        public ProductToCategoryListResponse() {
-        }
-        
-        public ProductToCategoryListResponse(ApiTest.GOshopAPI.ProductToCategoryListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductToCategoryListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductToCategory[] ProductToCategoryListResult;
-        
-        public ProductToCategoryListResponseBody() {
-        }
-        
-        public ProductToCategoryListResponseBody(ApiTest.GOshopAPI.ProductToCategory[] ProductToCategoryListResult) {
-            this.ProductToCategoryListResult = ProductToCategoryListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DescriptionsListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DescriptionsList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.DescriptionsListRequestBody Body;
-        
-        public DescriptionsListRequest() {
-        }
-        
-        public DescriptionsListRequest(ApiTest.GOshopAPI.DescriptionsListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class DescriptionsListRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.DescriptionQuery filter;
-        
-        public DescriptionsListRequestBody() {
-        }
-        
-        public DescriptionsListRequestBody(ApiTest.GOshopAPI.DescriptionQuery filter) {
-            this.filter = filter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DescriptionsListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DescriptionsListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.DescriptionsListResponseBody Body;
-        
-        public DescriptionsListResponse() {
-        }
-        
-        public DescriptionsListResponse(ApiTest.GOshopAPI.DescriptionsListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class DescriptionsListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductDescription[] DescriptionsListResult;
-        
-        public DescriptionsListResponseBody() {
-        }
-        
-        public DescriptionsListResponseBody(ApiTest.GOshopAPI.ProductDescription[] DescriptionsListResult) {
-            this.DescriptionsListResult = DescriptionsListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ImagesListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ImagesList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ImagesListRequestBody Body;
-        
-        public ImagesListRequest() {
-        }
-        
-        public ImagesListRequest(ApiTest.GOshopAPI.ImagesListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ImagesListRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ImageQuery filter;
-        
-        public ImagesListRequestBody() {
-        }
-        
-        public ImagesListRequestBody(ApiTest.GOshopAPI.ImageQuery filter) {
-            this.filter = filter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ImagesListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ImagesListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ImagesListResponseBody Body;
-        
-        public ImagesListResponse() {
-        }
-        
-        public ImagesListResponse(ApiTest.GOshopAPI.ImagesListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ImagesListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductImage[] ImagesListResult;
-        
-        public ImagesListResponseBody() {
-        }
-        
-        public ImagesListResponseBody(ApiTest.GOshopAPI.ProductImage[] ImagesListResult) {
-            this.ImagesListResult = ImagesListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ImageAdd", WrapperNamespace="http://goshop.pl/soapapi", IsWrapped=true)]
     public partial class ImageAddRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ImageAdd", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ImageAddRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=0)]
+        public int productId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] imageBytes;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=2)]
+        public string hash;
         
         public ImageAddRequest() {
         }
         
-        public ImageAddRequest(ApiTest.GOshopAPI.ImageAddRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ImageAddRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int productId;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public byte[] imageBytes;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string hash;
-        
-        public ImageAddRequestBody() {
-        }
-        
-        public ImageAddRequestBody(int productId, byte[] imageBytes, string hash) {
+        public ImageAddRequest(int productId, byte[] imageBytes, string hash) {
             this.productId = productId;
             this.imageBytes = imageBytes;
             this.hash = hash;
@@ -4078,1023 +3356,17 @@ namespace ApiTest.GOshopAPI {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ImageAddResponse", WrapperNamespace="http://goshop.pl/soapapi", IsWrapped=true)]
     public partial class ImageAddResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ImageAddResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ImageAddResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://goshop.pl/soapapi", Order=0)]
+        public ApiTest.GOshopAPI.ProductImage ImageAddResult;
         
         public ImageAddResponse() {
         }
         
-        public ImageAddResponse(ApiTest.GOshopAPI.ImageAddResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ImageAddResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductImage ImageAddResult;
-        
-        public ImageAddResponseBody() {
-        }
-        
-        public ImageAddResponseBody(ApiTest.GOshopAPI.ProductImage ImageAddResult) {
+        public ImageAddResponse(ApiTest.GOshopAPI.ProductImage ImageAddResult) {
             this.ImageAddResult = ImageAddResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DescriptionAddOrUpdateRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DescriptionAddOrUpdate", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.DescriptionAddOrUpdateRequestBody Body;
-        
-        public DescriptionAddOrUpdateRequest() {
-        }
-        
-        public DescriptionAddOrUpdateRequest(ApiTest.GOshopAPI.DescriptionAddOrUpdateRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class DescriptionAddOrUpdateRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int productId;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string fullHtmlDescription;
-        
-        public DescriptionAddOrUpdateRequestBody() {
-        }
-        
-        public DescriptionAddOrUpdateRequestBody(int productId, string fullHtmlDescription) {
-            this.productId = productId;
-            this.fullHtmlDescription = fullHtmlDescription;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DescriptionAddOrUpdateResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DescriptionAddOrUpdateResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.DescriptionAddOrUpdateResponseBody Body;
-        
-        public DescriptionAddOrUpdateResponse() {
-        }
-        
-        public DescriptionAddOrUpdateResponse(ApiTest.GOshopAPI.DescriptionAddOrUpdateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class DescriptionAddOrUpdateResponseBody {
-        
-        public DescriptionAddOrUpdateResponseBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OptionsListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OptionsList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OptionsListRequestBody Body;
-        
-        public OptionsListRequest() {
-        }
-        
-        public OptionsListRequest(ApiTest.GOshopAPI.OptionsListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OptionsListRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OptionQuery filter;
-        
-        public OptionsListRequestBody() {
-        }
-        
-        public OptionsListRequestBody(ApiTest.GOshopAPI.OptionQuery filter) {
-            this.filter = filter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OptionsListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OptionsListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OptionsListResponseBody Body;
-        
-        public OptionsListResponse() {
-        }
-        
-        public OptionsListResponse(ApiTest.GOshopAPI.OptionsListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OptionsListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductOption[] OptionsListResult;
-        
-        public OptionsListResponseBody() {
-        }
-        
-        public OptionsListResponseBody(ApiTest.GOshopAPI.ProductOption[] OptionsListResult) {
-            this.OptionsListResult = OptionsListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AddBasicOptionRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddBasicOption", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.AddBasicOptionRequestBody Body;
-        
-        public AddBasicOptionRequest() {
-        }
-        
-        public AddBasicOptionRequest(ApiTest.GOshopAPI.AddBasicOptionRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class AddBasicOptionRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OptionAddRequest request;
-        
-        public AddBasicOptionRequestBody() {
-        }
-        
-        public AddBasicOptionRequestBody(ApiTest.GOshopAPI.OptionAddRequest request) {
-            this.request = request;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AddBasicOptionResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddBasicOptionResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.AddBasicOptionResponseBody Body;
-        
-        public AddBasicOptionResponse() {
-        }
-        
-        public AddBasicOptionResponse(ApiTest.GOshopAPI.AddBasicOptionResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class AddBasicOptionResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductOption AddBasicOptionResult;
-        
-        public AddBasicOptionResponseBody() {
-        }
-        
-        public AddBasicOptionResponseBody(ApiTest.GOshopAPI.ProductOption AddBasicOptionResult) {
-            this.AddBasicOptionResult = AddBasicOptionResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AddVariantOptionRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddVariantOption", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.AddVariantOptionRequestBody Body;
-        
-        public AddVariantOptionRequest() {
-        }
-        
-        public AddVariantOptionRequest(ApiTest.GOshopAPI.AddVariantOptionRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class AddVariantOptionRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OptionAddRequest request;
-        
-        public AddVariantOptionRequestBody() {
-        }
-        
-        public AddVariantOptionRequestBody(ApiTest.GOshopAPI.OptionAddRequest request) {
-            this.request = request;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AddVariantOptionResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddVariantOptionResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.AddVariantOptionResponseBody Body;
-        
-        public AddVariantOptionResponse() {
-        }
-        
-        public AddVariantOptionResponse(ApiTest.GOshopAPI.AddVariantOptionResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class AddVariantOptionResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductOption AddVariantOptionResult;
-        
-        public AddVariantOptionResponseBody() {
-        }
-        
-        public AddVariantOptionResponseBody(ApiTest.GOshopAPI.ProductOption AddVariantOptionResult) {
-            this.AddVariantOptionResult = AddVariantOptionResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OptionsStockAndPriceUpdateRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OptionsStockAndPriceUpdate", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequestBody Body;
-        
-        public OptionsStockAndPriceUpdateRequest() {
-        }
-        
-        public OptionsStockAndPriceUpdateRequest(ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OptionsStockAndPriceUpdateRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch;
-        
-        public OptionsStockAndPriceUpdateRequestBody() {
-        }
-        
-        public OptionsStockAndPriceUpdateRequestBody(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch) {
-            this.requestBatch = requestBatch;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OptionsStockAndPriceUpdateResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OptionsStockAndPriceUpdateResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponseBody Body;
-        
-        public OptionsStockAndPriceUpdateResponse() {
-        }
-        
-        public OptionsStockAndPriceUpdateResponse(ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OptionsStockAndPriceUpdateResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int OptionsStockAndPriceUpdateResult;
-        
-        public OptionsStockAndPriceUpdateResponseBody() {
-        }
-        
-        public OptionsStockAndPriceUpdateResponseBody(int OptionsStockAndPriceUpdateResult) {
-            this.OptionsStockAndPriceUpdateResult = OptionsStockAndPriceUpdateResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RemoveOptionsRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemoveOptions", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.RemoveOptionsRequestBody Body;
-        
-        public RemoveOptionsRequest() {
-        }
-        
-        public RemoveOptionsRequest(ApiTest.GOshopAPI.RemoveOptionsRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class RemoveOptionsRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ArrayOfInt optionIdToRemove;
-        
-        public RemoveOptionsRequestBody() {
-        }
-        
-        public RemoveOptionsRequestBody(ApiTest.GOshopAPI.ArrayOfInt optionIdToRemove) {
-            this.optionIdToRemove = optionIdToRemove;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RemoveOptionsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemoveOptionsResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.RemoveOptionsResponseBody Body;
-        
-        public RemoveOptionsResponse() {
-        }
-        
-        public RemoveOptionsResponse(ApiTest.GOshopAPI.RemoveOptionsResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class RemoveOptionsResponseBody {
-        
-        public RemoveOptionsResponseBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductsListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductsList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductsListRequestBody Body;
-        
-        public ProductsListRequest() {
-        }
-        
-        public ProductsListRequest(ApiTest.GOshopAPI.ProductsListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductsListRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductQuery filter;
-        
-        public ProductsListRequestBody() {
-        }
-        
-        public ProductsListRequestBody(ApiTest.GOshopAPI.ProductQuery filter) {
-            this.filter = filter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductsListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductsListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductsListResponseBody Body;
-        
-        public ProductsListResponse() {
-        }
-        
-        public ProductsListResponse(ApiTest.GOshopAPI.ProductsListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductsListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.Product[] ProductsListResult;
-        
-        public ProductsListResponseBody() {
-        }
-        
-        public ProductsListResponseBody(ApiTest.GOshopAPI.Product[] ProductsListResult) {
-            this.ProductsListResult = ProductsListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductAddRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductAdd", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductAddRequestBody Body;
-        
-        public ProductAddRequest() {
-        }
-        
-        public ProductAddRequest(ApiTest.GOshopAPI.ProductAddRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductAddRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductAddStruct product;
-        
-        public ProductAddRequestBody() {
-        }
-        
-        public ProductAddRequestBody(ApiTest.GOshopAPI.ProductAddStruct product) {
-            this.product = product;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductAddResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductAddResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductAddResponseBody Body;
-        
-        public ProductAddResponse() {
-        }
-        
-        public ProductAddResponse(ApiTest.GOshopAPI.ProductAddResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductAddResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int ProductAddResult;
-        
-        public ProductAddResponseBody() {
-        }
-        
-        public ProductAddResponseBody(int ProductAddResult) {
-            this.ProductAddResult = ProductAddResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductUpdateRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductUpdate", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductUpdateRequestBody Body;
-        
-        public ProductUpdateRequest() {
-        }
-        
-        public ProductUpdateRequest(ApiTest.GOshopAPI.ProductUpdateRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductUpdateRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch;
-        
-        public ProductUpdateRequestBody() {
-        }
-        
-        public ProductUpdateRequestBody(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch) {
-            this.productUpdateBatch = productUpdateBatch;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProductUpdateResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProductUpdateResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProductUpdateResponseBody Body;
-        
-        public ProductUpdateResponse() {
-        }
-        
-        public ProductUpdateResponse(ApiTest.GOshopAPI.ProductUpdateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProductUpdateResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int ProductUpdateResult;
-        
-        public ProductUpdateResponseBody() {
-        }
-        
-        public ProductUpdateResponseBody(int ProductUpdateResult) {
-            this.ProductUpdateResult = ProductUpdateResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProducersListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProducersList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProducersListRequestBody Body;
-        
-        public ProducersListRequest() {
-        }
-        
-        public ProducersListRequest(ApiTest.GOshopAPI.ProducersListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class ProducersListRequestBody {
-        
-        public ProducersListRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProducersListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProducersListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProducersListResponseBody Body;
-        
-        public ProducersListResponse() {
-        }
-        
-        public ProducersListResponse(ApiTest.GOshopAPI.ProducersListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProducersListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductProducer[] ProducersListResult;
-        
-        public ProducersListResponseBody() {
-        }
-        
-        public ProducersListResponseBody(ApiTest.GOshopAPI.ProductProducer[] ProducersListResult) {
-            this.ProducersListResult = ProducersListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProducerAddRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProducerAdd", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProducerAddRequestBody Body;
-        
-        public ProducerAddRequest() {
-        }
-        
-        public ProducerAddRequest(ApiTest.GOshopAPI.ProducerAddRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProducerAddRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string producerName;
-        
-        public ProducerAddRequestBody() {
-        }
-        
-        public ProducerAddRequestBody(string producerName) {
-            this.producerName = producerName;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProducerAddResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ProducerAddResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.ProducerAddResponseBody Body;
-        
-        public ProducerAddResponse() {
-        }
-        
-        public ProducerAddResponse(ApiTest.GOshopAPI.ProducerAddResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class ProducerAddResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.ProductProducer[] ProducerAddResult;
-        
-        public ProducerAddResponseBody() {
-        }
-        
-        public ProducerAddResponseBody(ApiTest.GOshopAPI.ProductProducer[] ProducerAddResult) {
-            this.ProducerAddResult = ProducerAddResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class PingRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Ping", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.PingRequestBody Body;
-        
-        public PingRequest() {
-        }
-        
-        public PingRequest(ApiTest.GOshopAPI.PingRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class PingRequestBody {
-        
-        public PingRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class PingResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="PingResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.PingResponseBody Body;
-        
-        public PingResponse() {
-        }
-        
-        public PingResponse(ApiTest.GOshopAPI.PingResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class PingResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string PingResult;
-        
-        public PingResponseBody() {
-        }
-        
-        public PingResponseBody(string PingResult) {
-            this.PingResult = PingResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OrdersListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OrdersList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OrdersListRequestBody Body;
-        
-        public OrdersListRequest() {
-        }
-        
-        public OrdersListRequest(ApiTest.GOshopAPI.OrdersListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OrdersListRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OrderQuery filter;
-        
-        public OrdersListRequestBody() {
-        }
-        
-        public OrdersListRequestBody(ApiTest.GOshopAPI.OrderQuery filter) {
-            this.filter = filter;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OrdersListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OrdersListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OrdersListResponseBody Body;
-        
-        public OrdersListResponse() {
-        }
-        
-        public OrdersListResponse(ApiTest.GOshopAPI.OrdersListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OrdersListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.Order[] OrdersListResult;
-        
-        public OrdersListResponseBody() {
-        }
-        
-        public OrdersListResponseBody(ApiTest.GOshopAPI.Order[] OrdersListResult) {
-            this.OrdersListResult = OrdersListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OrdersStatesListRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OrdersStatesList", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OrdersStatesListRequestBody Body;
-        
-        public OrdersStatesListRequest() {
-        }
-        
-        public OrdersStatesListRequest(ApiTest.GOshopAPI.OrdersStatesListRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class OrdersStatesListRequestBody {
-        
-        public OrdersStatesListRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OrdersStatesListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OrdersStatesListResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OrdersStatesListResponseBody Body;
-        
-        public OrdersStatesListResponse() {
-        }
-        
-        public OrdersStatesListResponse(ApiTest.GOshopAPI.OrdersStatesListResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OrdersStatesListResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OrderState[] OrdersStatesListResult;
-        
-        public OrdersStatesListResponseBody() {
-        }
-        
-        public OrdersStatesListResponseBody(ApiTest.GOshopAPI.OrderState[] OrdersStatesListResult) {
-            this.OrdersStatesListResult = OrdersStatesListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OrderUpdateRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OrderUpdate", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OrderUpdateRequestBody Body;
-        
-        public OrderUpdateRequest() {
-        }
-        
-        public OrderUpdateRequest(ApiTest.GOshopAPI.OrderUpdateRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OrderUpdateRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ApiTest.GOshopAPI.OrderUpdateQuery updateRequest;
-        
-        public OrderUpdateRequestBody() {
-        }
-        
-        public OrderUpdateRequestBody(ApiTest.GOshopAPI.OrderUpdateQuery updateRequest) {
-            this.updateRequest = updateRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class OrderUpdateResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="OrderUpdateResponse", Namespace="http://goshop.pl/soapapi", Order=0)]
-        public ApiTest.GOshopAPI.OrderUpdateResponseBody Body;
-        
-        public OrderUpdateResponse() {
-        }
-        
-        public OrderUpdateResponse(ApiTest.GOshopAPI.OrderUpdateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://goshop.pl/soapapi")]
-    public partial class OrderUpdateResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool OrderUpdateResult;
-        
-        public OrderUpdateResponseBody() {
-        }
-        
-        public OrderUpdateResponseBody(bool OrderUpdateResult) {
-            this.OrderUpdateResult = OrderUpdateResult;
         }
     }
     
@@ -5125,79 +3397,28 @@ namespace ApiTest.GOshopAPI {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.FeatureAddResponse ApiTest.GOshopAPI.GOshopAPISoap.FeatureAdd(ApiTest.GOshopAPI.FeatureAddRequest request) {
-            return base.Channel.FeatureAdd(request);
-        }
-        
         public int FeatureAdd(string featureName) {
-            ApiTest.GOshopAPI.FeatureAddRequest inValue = new ApiTest.GOshopAPI.FeatureAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.FeatureAddRequestBody();
-            inValue.Body.featureName = featureName;
-            ApiTest.GOshopAPI.FeatureAddResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).FeatureAdd(inValue);
-            return retVal.Body.FeatureAddResult;
+            return base.Channel.FeatureAdd(featureName);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.FeatureAddResponse> ApiTest.GOshopAPI.GOshopAPISoap.FeatureAddAsync(ApiTest.GOshopAPI.FeatureAddRequest request) {
-            return base.Channel.FeatureAddAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.FeatureAddResponse> FeatureAddAsync(string featureName) {
-            ApiTest.GOshopAPI.FeatureAddRequest inValue = new ApiTest.GOshopAPI.FeatureAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.FeatureAddRequestBody();
-            inValue.Body.featureName = featureName;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).FeatureAddAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.DictionaryAddResponse ApiTest.GOshopAPI.GOshopAPISoap.DictionaryAdd(ApiTest.GOshopAPI.DictionaryAddRequest request) {
-            return base.Channel.DictionaryAdd(request);
+        public System.Threading.Tasks.Task<int> FeatureAddAsync(string featureName) {
+            return base.Channel.FeatureAddAsync(featureName);
         }
         
         public int DictionaryAdd(int featureId, string dictionaryValue) {
-            ApiTest.GOshopAPI.DictionaryAddRequest inValue = new ApiTest.GOshopAPI.DictionaryAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.DictionaryAddRequestBody();
-            inValue.Body.featureId = featureId;
-            inValue.Body.dictionaryValue = dictionaryValue;
-            ApiTest.GOshopAPI.DictionaryAddResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).DictionaryAdd(inValue);
-            return retVal.Body.DictionaryAddResult;
+            return base.Channel.DictionaryAdd(featureId, dictionaryValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.DictionaryAddResponse> ApiTest.GOshopAPI.GOshopAPISoap.DictionaryAddAsync(ApiTest.GOshopAPI.DictionaryAddRequest request) {
-            return base.Channel.DictionaryAddAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.DictionaryAddResponse> DictionaryAddAsync(int featureId, string dictionaryValue) {
-            ApiTest.GOshopAPI.DictionaryAddRequest inValue = new ApiTest.GOshopAPI.DictionaryAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.DictionaryAddRequestBody();
-            inValue.Body.featureId = featureId;
-            inValue.Body.dictionaryValue = dictionaryValue;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).DictionaryAddAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse ApiTest.GOshopAPI.GOshopAPISoap.FeaturesAndDictionariesList(ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest request) {
-            return base.Channel.FeaturesAndDictionariesList(request);
+        public System.Threading.Tasks.Task<int> DictionaryAddAsync(int featureId, string dictionaryValue) {
+            return base.Channel.DictionaryAddAsync(featureId, dictionaryValue);
         }
         
         public ApiTest.GOshopAPI.ProductFeature[] FeaturesAndDictionariesList() {
-            ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest inValue = new ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.FeaturesAndDictionariesListRequestBody();
-            ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).FeaturesAndDictionariesList(inValue);
-            return retVal.Body.FeaturesAndDictionariesListResult;
+            return base.Channel.FeaturesAndDictionariesList();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse> ApiTest.GOshopAPI.GOshopAPISoap.FeaturesAndDictionariesListAsync(ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest request) {
-            return base.Channel.FeaturesAndDictionariesListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.FeaturesAndDictionariesListResponse> FeaturesAndDictionariesListAsync() {
-            ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest inValue = new ApiTest.GOshopAPI.FeaturesAndDictionariesListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.FeaturesAndDictionariesListRequestBody();
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).FeaturesAndDictionariesListAsync(inValue);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductFeature[]> FeaturesAndDictionariesListAsync() {
+            return base.Channel.FeaturesAndDictionariesListAsync();
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5207,11 +3428,10 @@ namespace ApiTest.GOshopAPI {
         
         public System.Nullable<int> CategoryAdd(string categoryName, int parentId) {
             ApiTest.GOshopAPI.CategoryAddRequest inValue = new ApiTest.GOshopAPI.CategoryAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.CategoryAddRequestBody();
-            inValue.Body.categoryName = categoryName;
-            inValue.Body.parentId = parentId;
+            inValue.categoryName = categoryName;
+            inValue.parentId = parentId;
             ApiTest.GOshopAPI.CategoryAddResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).CategoryAdd(inValue);
-            return retVal.Body.CategoryAddResult;
+            return retVal.CategoryAddResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5221,108 +3441,41 @@ namespace ApiTest.GOshopAPI {
         
         public System.Threading.Tasks.Task<ApiTest.GOshopAPI.CategoryAddResponse> CategoryAddAsync(string categoryName, int parentId) {
             ApiTest.GOshopAPI.CategoryAddRequest inValue = new ApiTest.GOshopAPI.CategoryAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.CategoryAddRequestBody();
-            inValue.Body.categoryName = categoryName;
-            inValue.Body.parentId = parentId;
+            inValue.categoryName = categoryName;
+            inValue.parentId = parentId;
             return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).CategoryAddAsync(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.CategoryTreeListResponse ApiTest.GOshopAPI.GOshopAPISoap.CategoryTreeList(ApiTest.GOshopAPI.CategoryTreeListRequest request) {
-            return base.Channel.CategoryTreeList(request);
-        }
-        
         public ApiTest.GOshopAPI.ProductCategory[] CategoryTreeList() {
-            ApiTest.GOshopAPI.CategoryTreeListRequest inValue = new ApiTest.GOshopAPI.CategoryTreeListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.CategoryTreeListRequestBody();
-            ApiTest.GOshopAPI.CategoryTreeListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).CategoryTreeList(inValue);
-            return retVal.Body.CategoryTreeListResult;
+            return base.Channel.CategoryTreeList();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.CategoryTreeListResponse> ApiTest.GOshopAPI.GOshopAPISoap.CategoryTreeListAsync(ApiTest.GOshopAPI.CategoryTreeListRequest request) {
-            return base.Channel.CategoryTreeListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.CategoryTreeListResponse> CategoryTreeListAsync() {
-            ApiTest.GOshopAPI.CategoryTreeListRequest inValue = new ApiTest.GOshopAPI.CategoryTreeListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.CategoryTreeListRequestBody();
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).CategoryTreeListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ProductToCategoryListResponse ApiTest.GOshopAPI.GOshopAPISoap.ProductToCategoryList(ApiTest.GOshopAPI.ProductToCategoryListRequest request) {
-            return base.Channel.ProductToCategoryList(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductCategory[]> CategoryTreeListAsync() {
+            return base.Channel.CategoryTreeListAsync();
         }
         
         public ApiTest.GOshopAPI.ProductToCategory[] ProductToCategoryList(ApiTest.GOshopAPI.CategoryToProductQuery filter) {
-            ApiTest.GOshopAPI.ProductToCategoryListRequest inValue = new ApiTest.GOshopAPI.ProductToCategoryListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductToCategoryListRequestBody();
-            inValue.Body.filter = filter;
-            ApiTest.GOshopAPI.ProductToCategoryListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductToCategoryList(inValue);
-            return retVal.Body.ProductToCategoryListResult;
+            return base.Channel.ProductToCategoryList(filter);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductToCategoryListResponse> ApiTest.GOshopAPI.GOshopAPISoap.ProductToCategoryListAsync(ApiTest.GOshopAPI.ProductToCategoryListRequest request) {
-            return base.Channel.ProductToCategoryListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductToCategoryListResponse> ProductToCategoryListAsync(ApiTest.GOshopAPI.CategoryToProductQuery filter) {
-            ApiTest.GOshopAPI.ProductToCategoryListRequest inValue = new ApiTest.GOshopAPI.ProductToCategoryListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductToCategoryListRequestBody();
-            inValue.Body.filter = filter;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductToCategoryListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.DescriptionsListResponse ApiTest.GOshopAPI.GOshopAPISoap.DescriptionsList(ApiTest.GOshopAPI.DescriptionsListRequest request) {
-            return base.Channel.DescriptionsList(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductToCategory[]> ProductToCategoryListAsync(ApiTest.GOshopAPI.CategoryToProductQuery filter) {
+            return base.Channel.ProductToCategoryListAsync(filter);
         }
         
         public ApiTest.GOshopAPI.ProductDescription[] DescriptionsList(ApiTest.GOshopAPI.DescriptionQuery filter) {
-            ApiTest.GOshopAPI.DescriptionsListRequest inValue = new ApiTest.GOshopAPI.DescriptionsListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.DescriptionsListRequestBody();
-            inValue.Body.filter = filter;
-            ApiTest.GOshopAPI.DescriptionsListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).DescriptionsList(inValue);
-            return retVal.Body.DescriptionsListResult;
+            return base.Channel.DescriptionsList(filter);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.DescriptionsListResponse> ApiTest.GOshopAPI.GOshopAPISoap.DescriptionsListAsync(ApiTest.GOshopAPI.DescriptionsListRequest request) {
-            return base.Channel.DescriptionsListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.DescriptionsListResponse> DescriptionsListAsync(ApiTest.GOshopAPI.DescriptionQuery filter) {
-            ApiTest.GOshopAPI.DescriptionsListRequest inValue = new ApiTest.GOshopAPI.DescriptionsListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.DescriptionsListRequestBody();
-            inValue.Body.filter = filter;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).DescriptionsListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ImagesListResponse ApiTest.GOshopAPI.GOshopAPISoap.ImagesList(ApiTest.GOshopAPI.ImagesListRequest request) {
-            return base.Channel.ImagesList(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductDescription[]> DescriptionsListAsync(ApiTest.GOshopAPI.DescriptionQuery filter) {
+            return base.Channel.DescriptionsListAsync(filter);
         }
         
         public ApiTest.GOshopAPI.ProductImage[] ImagesList(ApiTest.GOshopAPI.ImageQuery filter) {
-            ApiTest.GOshopAPI.ImagesListRequest inValue = new ApiTest.GOshopAPI.ImagesListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ImagesListRequestBody();
-            inValue.Body.filter = filter;
-            ApiTest.GOshopAPI.ImagesListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ImagesList(inValue);
-            return retVal.Body.ImagesListResult;
+            return base.Channel.ImagesList(filter);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ImagesListResponse> ApiTest.GOshopAPI.GOshopAPISoap.ImagesListAsync(ApiTest.GOshopAPI.ImagesListRequest request) {
-            return base.Channel.ImagesListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ImagesListResponse> ImagesListAsync(ApiTest.GOshopAPI.ImageQuery filter) {
-            ApiTest.GOshopAPI.ImagesListRequest inValue = new ApiTest.GOshopAPI.ImagesListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ImagesListRequestBody();
-            inValue.Body.filter = filter;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ImagesListAsync(inValue);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductImage[]> ImagesListAsync(ApiTest.GOshopAPI.ImageQuery filter) {
+            return base.Channel.ImagesListAsync(filter);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5332,12 +3485,11 @@ namespace ApiTest.GOshopAPI {
         
         public ApiTest.GOshopAPI.ProductImage ImageAdd(int productId, byte[] imageBytes, string hash) {
             ApiTest.GOshopAPI.ImageAddRequest inValue = new ApiTest.GOshopAPI.ImageAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ImageAddRequestBody();
-            inValue.Body.productId = productId;
-            inValue.Body.imageBytes = imageBytes;
-            inValue.Body.hash = hash;
+            inValue.productId = productId;
+            inValue.imageBytes = imageBytes;
+            inValue.hash = hash;
             ApiTest.GOshopAPI.ImageAddResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ImageAdd(inValue);
-            return retVal.Body.ImageAddResult;
+            return retVal.ImageAddResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5347,10 +3499,9 @@ namespace ApiTest.GOshopAPI {
         
         public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ImageAddResponse> ImageAddAsync(int productId, byte[] imageBytes, string hash) {
             ApiTest.GOshopAPI.ImageAddRequest inValue = new ApiTest.GOshopAPI.ImageAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ImageAddRequestBody();
-            inValue.Body.productId = productId;
-            inValue.Body.imageBytes = imageBytes;
-            inValue.Body.hash = hash;
+            inValue.productId = productId;
+            inValue.imageBytes = imageBytes;
+            inValue.hash = hash;
             return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ImageAddAsync(inValue);
         }
         
@@ -5362,373 +3513,132 @@ namespace ApiTest.GOshopAPI {
             return base.Channel.ImageRemoveAsync(productPictureId);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse ApiTest.GOshopAPI.GOshopAPISoap.DescriptionAddOrUpdate(ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest request) {
-            return base.Channel.DescriptionAddOrUpdate(request);
-        }
-        
         public void DescriptionAddOrUpdate(int productId, string fullHtmlDescription) {
-            ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest inValue = new ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.DescriptionAddOrUpdateRequestBody();
-            inValue.Body.productId = productId;
-            inValue.Body.fullHtmlDescription = fullHtmlDescription;
-            ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).DescriptionAddOrUpdate(inValue);
+            base.Channel.DescriptionAddOrUpdate(productId, fullHtmlDescription);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse> ApiTest.GOshopAPI.GOshopAPISoap.DescriptionAddOrUpdateAsync(ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest request) {
-            return base.Channel.DescriptionAddOrUpdateAsync(request);
+        public System.Threading.Tasks.Task DescriptionAddOrUpdateAsync(int productId, string fullHtmlDescription) {
+            return base.Channel.DescriptionAddOrUpdateAsync(productId, fullHtmlDescription);
         }
         
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.DescriptionAddOrUpdateResponse> DescriptionAddOrUpdateAsync(int productId, string fullHtmlDescription) {
-            ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest inValue = new ApiTest.GOshopAPI.DescriptionAddOrUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.DescriptionAddOrUpdateRequestBody();
-            inValue.Body.productId = productId;
-            inValue.Body.fullHtmlDescription = fullHtmlDescription;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).DescriptionAddOrUpdateAsync(inValue);
+        public void TraitsUpdate(ApiTest.GOshopAPI.TraitUpdateStruct request) {
+            base.Channel.TraitsUpdate(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.OptionsListResponse ApiTest.GOshopAPI.GOshopAPISoap.OptionsList(ApiTest.GOshopAPI.OptionsListRequest request) {
-            return base.Channel.OptionsList(request);
+        public System.Threading.Tasks.Task TraitsUpdateAsync(ApiTest.GOshopAPI.TraitUpdateStruct request) {
+            return base.Channel.TraitsUpdateAsync(request);
         }
         
         public ApiTest.GOshopAPI.ProductOption[] OptionsList(ApiTest.GOshopAPI.OptionQuery filter) {
-            ApiTest.GOshopAPI.OptionsListRequest inValue = new ApiTest.GOshopAPI.OptionsListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OptionsListRequestBody();
-            inValue.Body.filter = filter;
-            ApiTest.GOshopAPI.OptionsListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OptionsList(inValue);
-            return retVal.Body.OptionsListResult;
+            return base.Channel.OptionsList(filter);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionsListResponse> ApiTest.GOshopAPI.GOshopAPISoap.OptionsListAsync(ApiTest.GOshopAPI.OptionsListRequest request) {
-            return base.Channel.OptionsListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionsListResponse> OptionsListAsync(ApiTest.GOshopAPI.OptionQuery filter) {
-            ApiTest.GOshopAPI.OptionsListRequest inValue = new ApiTest.GOshopAPI.OptionsListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OptionsListRequestBody();
-            inValue.Body.filter = filter;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OptionsListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.AddBasicOptionResponse ApiTest.GOshopAPI.GOshopAPISoap.AddBasicOption(ApiTest.GOshopAPI.AddBasicOptionRequest request) {
-            return base.Channel.AddBasicOption(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductOption[]> OptionsListAsync(ApiTest.GOshopAPI.OptionQuery filter) {
+            return base.Channel.OptionsListAsync(filter);
         }
         
         public ApiTest.GOshopAPI.ProductOption AddBasicOption(ApiTest.GOshopAPI.OptionAddRequest request) {
-            ApiTest.GOshopAPI.AddBasicOptionRequest inValue = new ApiTest.GOshopAPI.AddBasicOptionRequest();
-            inValue.Body = new ApiTest.GOshopAPI.AddBasicOptionRequestBody();
-            inValue.Body.request = request;
-            ApiTest.GOshopAPI.AddBasicOptionResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).AddBasicOption(inValue);
-            return retVal.Body.AddBasicOptionResult;
+            return base.Channel.AddBasicOption(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddBasicOptionResponse> ApiTest.GOshopAPI.GOshopAPISoap.AddBasicOptionAsync(ApiTest.GOshopAPI.AddBasicOptionRequest request) {
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductOption> AddBasicOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request) {
             return base.Channel.AddBasicOptionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddBasicOptionResponse> AddBasicOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request) {
-            ApiTest.GOshopAPI.AddBasicOptionRequest inValue = new ApiTest.GOshopAPI.AddBasicOptionRequest();
-            inValue.Body = new ApiTest.GOshopAPI.AddBasicOptionRequestBody();
-            inValue.Body.request = request;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).AddBasicOptionAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.AddVariantOptionResponse ApiTest.GOshopAPI.GOshopAPISoap.AddVariantOption(ApiTest.GOshopAPI.AddVariantOptionRequest request) {
+        public ApiTest.GOshopAPI.ProductOption AddVariantOption(ApiTest.GOshopAPI.OptionAddRequest request) {
             return base.Channel.AddVariantOption(request);
         }
         
-        public ApiTest.GOshopAPI.ProductOption AddVariantOption(ApiTest.GOshopAPI.OptionAddRequest request) {
-            ApiTest.GOshopAPI.AddVariantOptionRequest inValue = new ApiTest.GOshopAPI.AddVariantOptionRequest();
-            inValue.Body = new ApiTest.GOshopAPI.AddVariantOptionRequestBody();
-            inValue.Body.request = request;
-            ApiTest.GOshopAPI.AddVariantOptionResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).AddVariantOption(inValue);
-            return retVal.Body.AddVariantOptionResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddVariantOptionResponse> ApiTest.GOshopAPI.GOshopAPISoap.AddVariantOptionAsync(ApiTest.GOshopAPI.AddVariantOptionRequest request) {
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductOption> AddVariantOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request) {
             return base.Channel.AddVariantOptionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.AddVariantOptionResponse> AddVariantOptionAsync(ApiTest.GOshopAPI.OptionAddRequest request) {
-            ApiTest.GOshopAPI.AddVariantOptionRequest inValue = new ApiTest.GOshopAPI.AddVariantOptionRequest();
-            inValue.Body = new ApiTest.GOshopAPI.AddVariantOptionRequestBody();
-            inValue.Body.request = request;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).AddVariantOptionAsync(inValue);
+        public ApiTest.GOshopAPI.OptionUpdateResponse[] OptionsStockAndPriceUpdate(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch) {
+            return base.Channel.OptionsStockAndPriceUpdate(requestBatch);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse ApiTest.GOshopAPI.GOshopAPISoap.OptionsStockAndPriceUpdate(ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest request) {
-            return base.Channel.OptionsStockAndPriceUpdate(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionUpdateResponse[]> OptionsStockAndPriceUpdateAsync(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch) {
+            return base.Channel.OptionsStockAndPriceUpdateAsync(requestBatch);
         }
         
-        public int OptionsStockAndPriceUpdate(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch) {
-            ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest inValue = new ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequestBody();
-            inValue.Body.requestBatch = requestBatch;
-            ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OptionsStockAndPriceUpdate(inValue);
-            return retVal.Body.OptionsStockAndPriceUpdateResult;
+        public void RemoveOptions(int[] optionIdToRemove) {
+            base.Channel.RemoveOptions(optionIdToRemove);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse> ApiTest.GOshopAPI.GOshopAPISoap.OptionsStockAndPriceUpdateAsync(ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest request) {
-            return base.Channel.OptionsStockAndPriceUpdateAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OptionsStockAndPriceUpdateResponse> OptionsStockAndPriceUpdateAsync(ApiTest.GOshopAPI.OptionUpdateRequest[] requestBatch) {
-            ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest inValue = new ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OptionsStockAndPriceUpdateRequestBody();
-            inValue.Body.requestBatch = requestBatch;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OptionsStockAndPriceUpdateAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.RemoveOptionsResponse ApiTest.GOshopAPI.GOshopAPISoap.RemoveOptions(ApiTest.GOshopAPI.RemoveOptionsRequest request) {
-            return base.Channel.RemoveOptions(request);
-        }
-        
-        public void RemoveOptions(ApiTest.GOshopAPI.ArrayOfInt optionIdToRemove) {
-            ApiTest.GOshopAPI.RemoveOptionsRequest inValue = new ApiTest.GOshopAPI.RemoveOptionsRequest();
-            inValue.Body = new ApiTest.GOshopAPI.RemoveOptionsRequestBody();
-            inValue.Body.optionIdToRemove = optionIdToRemove;
-            ApiTest.GOshopAPI.RemoveOptionsResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).RemoveOptions(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.RemoveOptionsResponse> ApiTest.GOshopAPI.GOshopAPISoap.RemoveOptionsAsync(ApiTest.GOshopAPI.RemoveOptionsRequest request) {
-            return base.Channel.RemoveOptionsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.RemoveOptionsResponse> RemoveOptionsAsync(ApiTest.GOshopAPI.ArrayOfInt optionIdToRemove) {
-            ApiTest.GOshopAPI.RemoveOptionsRequest inValue = new ApiTest.GOshopAPI.RemoveOptionsRequest();
-            inValue.Body = new ApiTest.GOshopAPI.RemoveOptionsRequestBody();
-            inValue.Body.optionIdToRemove = optionIdToRemove;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).RemoveOptionsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ProductsListResponse ApiTest.GOshopAPI.GOshopAPISoap.ProductsList(ApiTest.GOshopAPI.ProductsListRequest request) {
-            return base.Channel.ProductsList(request);
+        public System.Threading.Tasks.Task RemoveOptionsAsync(int[] optionIdToRemove) {
+            return base.Channel.RemoveOptionsAsync(optionIdToRemove);
         }
         
         public ApiTest.GOshopAPI.Product[] ProductsList(ApiTest.GOshopAPI.ProductQuery filter) {
-            ApiTest.GOshopAPI.ProductsListRequest inValue = new ApiTest.GOshopAPI.ProductsListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductsListRequestBody();
-            inValue.Body.filter = filter;
-            ApiTest.GOshopAPI.ProductsListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductsList(inValue);
-            return retVal.Body.ProductsListResult;
+            return base.Channel.ProductsList(filter);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductsListResponse> ApiTest.GOshopAPI.GOshopAPISoap.ProductsListAsync(ApiTest.GOshopAPI.ProductsListRequest request) {
-            return base.Channel.ProductsListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductsListResponse> ProductsListAsync(ApiTest.GOshopAPI.ProductQuery filter) {
-            ApiTest.GOshopAPI.ProductsListRequest inValue = new ApiTest.GOshopAPI.ProductsListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductsListRequestBody();
-            inValue.Body.filter = filter;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductsListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ProductAddResponse ApiTest.GOshopAPI.GOshopAPISoap.ProductAdd(ApiTest.GOshopAPI.ProductAddRequest request) {
-            return base.Channel.ProductAdd(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.Product[]> ProductsListAsync(ApiTest.GOshopAPI.ProductQuery filter) {
+            return base.Channel.ProductsListAsync(filter);
         }
         
         public int ProductAdd(ApiTest.GOshopAPI.ProductAddStruct product) {
-            ApiTest.GOshopAPI.ProductAddRequest inValue = new ApiTest.GOshopAPI.ProductAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductAddRequestBody();
-            inValue.Body.product = product;
-            ApiTest.GOshopAPI.ProductAddResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductAdd(inValue);
-            return retVal.Body.ProductAddResult;
+            return base.Channel.ProductAdd(product);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductAddResponse> ApiTest.GOshopAPI.GOshopAPISoap.ProductAddAsync(ApiTest.GOshopAPI.ProductAddRequest request) {
-            return base.Channel.ProductAddAsync(request);
+        public System.Threading.Tasks.Task<int> ProductAddAsync(ApiTest.GOshopAPI.ProductAddStruct product) {
+            return base.Channel.ProductAddAsync(product);
         }
         
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductAddResponse> ProductAddAsync(ApiTest.GOshopAPI.ProductAddStruct product) {
-            ApiTest.GOshopAPI.ProductAddRequest inValue = new ApiTest.GOshopAPI.ProductAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductAddRequestBody();
-            inValue.Body.product = product;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductAddAsync(inValue);
+        public ApiTest.GOshopAPI.ProductUpdateResponse[] ProductUpdate(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch) {
+            return base.Channel.ProductUpdate(productUpdateBatch);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ProductUpdateResponse ApiTest.GOshopAPI.GOshopAPISoap.ProductUpdate(ApiTest.GOshopAPI.ProductUpdateRequest request) {
-            return base.Channel.ProductUpdate(request);
-        }
-        
-        public int ProductUpdate(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch) {
-            ApiTest.GOshopAPI.ProductUpdateRequest inValue = new ApiTest.GOshopAPI.ProductUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductUpdateRequestBody();
-            inValue.Body.productUpdateBatch = productUpdateBatch;
-            ApiTest.GOshopAPI.ProductUpdateResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductUpdate(inValue);
-            return retVal.Body.ProductUpdateResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductUpdateResponse> ApiTest.GOshopAPI.GOshopAPISoap.ProductUpdateAsync(ApiTest.GOshopAPI.ProductUpdateRequest request) {
-            return base.Channel.ProductUpdateAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductUpdateResponse> ProductUpdateAsync(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch) {
-            ApiTest.GOshopAPI.ProductUpdateRequest inValue = new ApiTest.GOshopAPI.ProductUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProductUpdateRequestBody();
-            inValue.Body.productUpdateBatch = productUpdateBatch;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProductUpdateAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ProducersListResponse ApiTest.GOshopAPI.GOshopAPISoap.ProducersList(ApiTest.GOshopAPI.ProducersListRequest request) {
-            return base.Channel.ProducersList(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductUpdateResponse[]> ProductUpdateAsync(ApiTest.GOshopAPI.ProductUpdateStruct[] productUpdateBatch) {
+            return base.Channel.ProductUpdateAsync(productUpdateBatch);
         }
         
         public ApiTest.GOshopAPI.ProductProducer[] ProducersList() {
-            ApiTest.GOshopAPI.ProducersListRequest inValue = new ApiTest.GOshopAPI.ProducersListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProducersListRequestBody();
-            ApiTest.GOshopAPI.ProducersListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProducersList(inValue);
-            return retVal.Body.ProducersListResult;
+            return base.Channel.ProducersList();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProducersListResponse> ApiTest.GOshopAPI.GOshopAPISoap.ProducersListAsync(ApiTest.GOshopAPI.ProducersListRequest request) {
-            return base.Channel.ProducersListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProducersListResponse> ProducersListAsync() {
-            ApiTest.GOshopAPI.ProducersListRequest inValue = new ApiTest.GOshopAPI.ProducersListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProducersListRequestBody();
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProducersListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.ProducerAddResponse ApiTest.GOshopAPI.GOshopAPISoap.ProducerAdd(ApiTest.GOshopAPI.ProducerAddRequest request) {
-            return base.Channel.ProducerAdd(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductProducer[]> ProducersListAsync() {
+            return base.Channel.ProducersListAsync();
         }
         
         public ApiTest.GOshopAPI.ProductProducer[] ProducerAdd(string producerName) {
-            ApiTest.GOshopAPI.ProducerAddRequest inValue = new ApiTest.GOshopAPI.ProducerAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProducerAddRequestBody();
-            inValue.Body.producerName = producerName;
-            ApiTest.GOshopAPI.ProducerAddResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProducerAdd(inValue);
-            return retVal.Body.ProducerAddResult;
+            return base.Channel.ProducerAdd(producerName);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProducerAddResponse> ApiTest.GOshopAPI.GOshopAPISoap.ProducerAddAsync(ApiTest.GOshopAPI.ProducerAddRequest request) {
-            return base.Channel.ProducerAddAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProducerAddResponse> ProducerAddAsync(string producerName) {
-            ApiTest.GOshopAPI.ProducerAddRequest inValue = new ApiTest.GOshopAPI.ProducerAddRequest();
-            inValue.Body = new ApiTest.GOshopAPI.ProducerAddRequestBody();
-            inValue.Body.producerName = producerName;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).ProducerAddAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.PingResponse ApiTest.GOshopAPI.GOshopAPISoap.Ping(ApiTest.GOshopAPI.PingRequest request) {
-            return base.Channel.Ping(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductProducer[]> ProducerAddAsync(string producerName) {
+            return base.Channel.ProducerAddAsync(producerName);
         }
         
         public string Ping() {
-            ApiTest.GOshopAPI.PingRequest inValue = new ApiTest.GOshopAPI.PingRequest();
-            inValue.Body = new ApiTest.GOshopAPI.PingRequestBody();
-            ApiTest.GOshopAPI.PingResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).Ping(inValue);
-            return retVal.Body.PingResult;
+            return base.Channel.Ping();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.PingResponse> ApiTest.GOshopAPI.GOshopAPISoap.PingAsync(ApiTest.GOshopAPI.PingRequest request) {
-            return base.Channel.PingAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.PingResponse> PingAsync() {
-            ApiTest.GOshopAPI.PingRequest inValue = new ApiTest.GOshopAPI.PingRequest();
-            inValue.Body = new ApiTest.GOshopAPI.PingRequestBody();
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).PingAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.OrdersListResponse ApiTest.GOshopAPI.GOshopAPISoap.OrdersList(ApiTest.GOshopAPI.OrdersListRequest request) {
-            return base.Channel.OrdersList(request);
+        public System.Threading.Tasks.Task<string> PingAsync() {
+            return base.Channel.PingAsync();
         }
         
         public ApiTest.GOshopAPI.Order[] OrdersList(ApiTest.GOshopAPI.OrderQuery filter) {
-            ApiTest.GOshopAPI.OrdersListRequest inValue = new ApiTest.GOshopAPI.OrdersListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OrdersListRequestBody();
-            inValue.Body.filter = filter;
-            ApiTest.GOshopAPI.OrdersListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OrdersList(inValue);
-            return retVal.Body.OrdersListResult;
+            return base.Channel.OrdersList(filter);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrdersListResponse> ApiTest.GOshopAPI.GOshopAPISoap.OrdersListAsync(ApiTest.GOshopAPI.OrdersListRequest request) {
-            return base.Channel.OrdersListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrdersListResponse> OrdersListAsync(ApiTest.GOshopAPI.OrderQuery filter) {
-            ApiTest.GOshopAPI.OrdersListRequest inValue = new ApiTest.GOshopAPI.OrdersListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OrdersListRequestBody();
-            inValue.Body.filter = filter;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OrdersListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.OrdersStatesListResponse ApiTest.GOshopAPI.GOshopAPISoap.OrdersStatesList(ApiTest.GOshopAPI.OrdersStatesListRequest request) {
-            return base.Channel.OrdersStatesList(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.Order[]> OrdersListAsync(ApiTest.GOshopAPI.OrderQuery filter) {
+            return base.Channel.OrdersListAsync(filter);
         }
         
         public ApiTest.GOshopAPI.OrderState[] OrdersStatesList() {
-            ApiTest.GOshopAPI.OrdersStatesListRequest inValue = new ApiTest.GOshopAPI.OrdersStatesListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OrdersStatesListRequestBody();
-            ApiTest.GOshopAPI.OrdersStatesListResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OrdersStatesList(inValue);
-            return retVal.Body.OrdersStatesListResult;
+            return base.Channel.OrdersStatesList();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrdersStatesListResponse> ApiTest.GOshopAPI.GOshopAPISoap.OrdersStatesListAsync(ApiTest.GOshopAPI.OrdersStatesListRequest request) {
-            return base.Channel.OrdersStatesListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrdersStatesListResponse> OrdersStatesListAsync() {
-            ApiTest.GOshopAPI.OrdersStatesListRequest inValue = new ApiTest.GOshopAPI.OrdersStatesListRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OrdersStatesListRequestBody();
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OrdersStatesListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ApiTest.GOshopAPI.OrderUpdateResponse ApiTest.GOshopAPI.GOshopAPISoap.OrderUpdate(ApiTest.GOshopAPI.OrderUpdateRequest request) {
-            return base.Channel.OrderUpdate(request);
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrderState[]> OrdersStatesListAsync() {
+            return base.Channel.OrdersStatesListAsync();
         }
         
         public bool OrderUpdate(ApiTest.GOshopAPI.OrderUpdateQuery updateRequest) {
-            ApiTest.GOshopAPI.OrderUpdateRequest inValue = new ApiTest.GOshopAPI.OrderUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OrderUpdateRequestBody();
-            inValue.Body.updateRequest = updateRequest;
-            ApiTest.GOshopAPI.OrderUpdateResponse retVal = ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OrderUpdate(inValue);
-            return retVal.Body.OrderUpdateResult;
+            return base.Channel.OrderUpdate(updateRequest);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrderUpdateResponse> ApiTest.GOshopAPI.GOshopAPISoap.OrderUpdateAsync(ApiTest.GOshopAPI.OrderUpdateRequest request) {
-            return base.Channel.OrderUpdateAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.OrderUpdateResponse> OrderUpdateAsync(ApiTest.GOshopAPI.OrderUpdateQuery updateRequest) {
-            ApiTest.GOshopAPI.OrderUpdateRequest inValue = new ApiTest.GOshopAPI.OrderUpdateRequest();
-            inValue.Body = new ApiTest.GOshopAPI.OrderUpdateRequestBody();
-            inValue.Body.updateRequest = updateRequest;
-            return ((ApiTest.GOshopAPI.GOshopAPISoap)(this)).OrderUpdateAsync(inValue);
+        public System.Threading.Tasks.Task<bool> OrderUpdateAsync(ApiTest.GOshopAPI.OrderUpdateQuery updateRequest) {
+            return base.Channel.OrderUpdateAsync(updateRequest);
         }
     }
 }

@@ -247,6 +247,38 @@
       <s:element name="DescriptionAddOrUpdateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="TraitsUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:TraitUpdateStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TraitUpdateStruct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traits" type="tns:ArrayOfProductTrait" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductTrait">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductTrait" nillable="true" type="tns:ProductTrait" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductTrait">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TraitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TraitDictionaries" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TraitsUpdateResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="OptionsList">
         <s:complexType>
           <s:sequence>
@@ -362,10 +394,27 @@
       <s:element name="OptionsStockAndPriceUpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="OptionsStockAndPriceUpdateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptionsStockAndPriceUpdateResult" type="tns:ArrayOfOptionUpdateResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfOptionUpdateResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OptionUpdateResponse" nillable="true" type="tns:OptionUpdateResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OptionUpdateResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StockChanged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldsChanged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemWasFound" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="RemoveOptions">
         <s:complexType>
           <s:sequence>
@@ -478,15 +527,30 @@
           <s:element minOccurs="0" maxOccurs="1" name="ShortDescription" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CategoryId" type="tns:ArrayOfInt" />
           <s:element minOccurs="0" maxOccurs="1" name="RemoveCategoryId" type="tns:ArrayOfInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" nillable="true" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="ProductUpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ProductUpdateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductUpdateResult" type="tns:ArrayOfProductUpdateResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfProductUpdateResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductUpdateResponse" nillable="true" type="tns:ProductUpdateResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductUpdateResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FieldsChanged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HtmlDescriptionChanged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemWasFound" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ProducersList">
         <s:complexType />
       </s:element>
@@ -742,6 +806,12 @@
   <wsdl:message name="DescriptionAddOrUpdateSoapOut">
     <wsdl:part name="parameters" element="tns:DescriptionAddOrUpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="TraitsUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:TraitsUpdate" />
+  </wsdl:message>
+  <wsdl:message name="TraitsUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:TraitsUpdateResponse" />
+  </wsdl:message>
   <wsdl:message name="OptionsListSoapIn">
     <wsdl:part name="parameters" element="tns:OptionsList" />
   </wsdl:message>
@@ -881,6 +951,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds or updates description for given productId</wsdl:documentation>
       <wsdl:input message="tns:DescriptionAddOrUpdateSoapIn" />
       <wsdl:output message="tns:DescriptionAddOrUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraitsUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update product traits</wsdl:documentation>
+      <wsdl:input message="tns:TraitsUpdateSoapIn" />
+      <wsdl:output message="tns:TraitsUpdateSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="OptionsList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of product options, max Page size is 500</wsdl:documentation>
@@ -1047,6 +1122,15 @@
     </wsdl:operation>
     <wsdl:operation name="DescriptionAddOrUpdate">
       <soap:operation soapAction="http://goshop.pl/soapapi/DescriptionAddOrUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraitsUpdate">
+      <soap:operation soapAction="http://goshop.pl/soapapi/TraitsUpdate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1275,6 +1359,15 @@
     </wsdl:operation>
     <wsdl:operation name="DescriptionAddOrUpdate">
       <soap12:operation soapAction="http://goshop.pl/soapapi/DescriptionAddOrUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraitsUpdate">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/TraitsUpdate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

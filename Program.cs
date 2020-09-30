@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using System.Xml.Serialization;
 using ApiTest.GOshopAPI;
 
 namespace ApiTest
@@ -51,7 +52,7 @@ namespace ApiTest
 
 
                 StockAndPriceUpdating(service);
-
+                TraitsUpdating(service);
 
                 Console.ReadKey();
 
@@ -63,6 +64,27 @@ namespace ApiTest
 
             }
 
+        }
+
+        private static void TraitsUpdating(GOshopAPISoapClient service)
+        {
+            service.TraitsUpdate(new TraitUpdateStruct
+            {
+                ProductId = 91,
+                Traits = new[] {
+                    new ProductTrait
+                    {
+                       TraitName = "Materiał",
+                       TraitDictionaries = new []{"Wiskoza", "Bawełna"}
+
+                    },
+                    new ProductTrait
+                    {
+                        TraitName = "Fason",
+                        TraitDictionaries = new []{"Podłużny"}
+
+                    } }
+            });
         }
 
         private static void StockAndPriceUpdating(GOshopAPISoapClient service)
@@ -139,8 +161,8 @@ namespace ApiTest
             for (var i = 0; i < request.Count; i += batchSize)
             {
                 var items = request.Skip(i).Take(batchSize);
-                rowsAffected += service.OptionsStockAndPriceUpdate(items.ToArray());
-                Console.WriteLine($"Batch part done, items processed: {i}");
+                var result = service.OptionsStockAndPriceUpdate(items.ToArray());
+                Console.WriteLine($"Batch part done, items processed: {i}, succes: {result.Count(x => x.ItemWasFound)}");
             }
 
 
@@ -488,7 +510,7 @@ namespace ApiTest
                 //CreatedLaterThan = DateTime.Now.AddYears(-50),
                 Page = 1,
                 PageSize = 10,
-                InStateId = new ArrayOfInt
+                InStateId = new[]
                 {
                     1,2,2,2,2,2
                 }
