@@ -1911,10 +1911,21 @@ namespace ApiTest.GOshopAPI {
         
         private int ProductIdField;
         
+        private System.Nullable<int> TaxRateField;
+        
         private System.Nullable<bool> ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProducerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FullHtmlDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ApiTest.GOshopAPI.ArrayOfInt CategoryIdField;
@@ -1945,7 +1956,20 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> TaxRate {
+            get {
+                return this.TaxRateField;
+            }
+            set {
+                if ((this.TaxRateField.Equals(value) != true)) {
+                    this.TaxRateField = value;
+                    this.RaisePropertyChanged("TaxRate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public System.Nullable<bool> Active {
             get {
                 return this.ActiveField;
@@ -1958,7 +1982,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Name {
             get {
                 return this.NameField;
@@ -1971,7 +1995,46 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ProducerName {
+            get {
+                return this.ProducerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProducerNameField, value) != true)) {
+                    this.ProducerNameField = value;
+                    this.RaisePropertyChanged("ProducerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string FullHtmlDescription {
+            get {
+                return this.FullHtmlDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FullHtmlDescriptionField, value) != true)) {
+                    this.FullHtmlDescriptionField = value;
+                    this.RaisePropertyChanged("FullHtmlDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ShortDescription {
+            get {
+                return this.ShortDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortDescriptionField, value) != true)) {
+                    this.ShortDescriptionField = value;
+                    this.RaisePropertyChanged("ShortDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public ApiTest.GOshopAPI.ArrayOfInt CategoryId {
             get {
                 return this.CategoryIdField;
@@ -1984,7 +2047,7 @@ namespace ApiTest.GOshopAPI {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public ApiTest.GOshopAPI.ArrayOfInt RemoveCategoryId {
             get {
                 return this.RemoveCategoryIdField;
