@@ -279,6 +279,42 @@
       <s:element name="TraitsUpdateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="TraitsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:TraitQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TraitQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TraitsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraitsListResult" type="tns:ArrayOfProductTraitToValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductTraitToValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductTraitToValue" nillable="true" type="tns:ProductTraitToValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductTraitToValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TraitValue" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TraitName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="OptionsList">
         <s:complexType>
           <s:sequence>
@@ -436,6 +472,8 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="CategoryId" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ProducerId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IncludeProductImages" nillable="true" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IncludeProductOptions" nillable="true" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
@@ -457,11 +495,13 @@
       </s:complexType>
       <s:complexType name="Product">
         <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ProducerId" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Producer" type="tns:ProductProducer" />
           <s:element minOccurs="0" maxOccurs="1" name="ImagesList" type="tns:ArrayOfProductImage" />
           <s:element minOccurs="0" maxOccurs="1" name="OptionsList" type="tns:ArrayOfProductOption" />
           <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxRate" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
@@ -547,8 +587,10 @@
           <s:element minOccurs="1" maxOccurs="1" name="FieldsChanged" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HtmlDescriptionChanged" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ItemWasFound" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseEAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseSKU" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="ProducersList">
@@ -812,6 +854,12 @@
   <wsdl:message name="TraitsUpdateSoapOut">
     <wsdl:part name="parameters" element="tns:TraitsUpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="TraitsListSoapIn">
+    <wsdl:part name="parameters" element="tns:TraitsList" />
+  </wsdl:message>
+  <wsdl:message name="TraitsListSoapOut">
+    <wsdl:part name="parameters" element="tns:TraitsListResponse" />
+  </wsdl:message>
   <wsdl:message name="OptionsListSoapIn">
     <wsdl:part name="parameters" element="tns:OptionsList" />
   </wsdl:message>
@@ -953,9 +1001,14 @@
       <wsdl:output message="tns:DescriptionAddOrUpdateSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="TraitsUpdate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update product traits</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update product traits, sending empty Array of traits removes defined traits. Other values are synchronized</wsdl:documentation>
       <wsdl:input message="tns:TraitsUpdateSoapIn" />
       <wsdl:output message="tns:TraitsUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraitsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of product traits, max Page size is 500</wsdl:documentation>
+      <wsdl:input message="tns:TraitsListSoapIn" />
+      <wsdl:output message="tns:TraitsListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="OptionsList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of product options, max Page size is 500</wsdl:documentation>
@@ -1131,6 +1184,15 @@
     </wsdl:operation>
     <wsdl:operation name="TraitsUpdate">
       <soap:operation soapAction="http://goshop.pl/soapapi/TraitsUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraitsList">
+      <soap:operation soapAction="http://goshop.pl/soapapi/TraitsList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1368,6 +1430,15 @@
     </wsdl:operation>
     <wsdl:operation name="TraitsUpdate">
       <soap12:operation soapAction="http://goshop.pl/soapapi/TraitsUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraitsList">
+      <soap12:operation soapAction="http://goshop.pl/soapapi/TraitsList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

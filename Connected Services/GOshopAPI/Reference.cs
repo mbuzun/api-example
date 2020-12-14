@@ -101,6 +101,13 @@ namespace ApiTest.GOshopAPI {
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/TraitsUpdate", ReplyAction="*")]
         System.Threading.Tasks.Task TraitsUpdateAsync(ApiTest.GOshopAPI.TraitUpdateStruct request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/TraitsList", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        ApiTest.GOshopAPI.ProductTraitToValue[] TraitsList(ApiTest.GOshopAPI.TraitQuery filter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/TraitsList", ReplyAction="*")]
+        System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductTraitToValue[]> TraitsListAsync(ApiTest.GOshopAPI.TraitQuery filter);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://goshop.pl/soapapi/OptionsList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         ApiTest.GOshopAPI.ProductOption[] OptionsList(ApiTest.GOshopAPI.OptionQuery filter);
@@ -1412,9 +1419,13 @@ namespace ApiTest.GOshopAPI {
         
         private bool itemWasFoundField;
         
-        private int productIdField;
+        private System.Nullable<int> productIdField;
         
         private string messageField;
+        
+        private string baseEANField;
+        
+        private string baseSKUField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1453,8 +1464,8 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public int ProductId {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<int> ProductId {
             get {
                 return this.productIdField;
             }
@@ -1473,6 +1484,30 @@ namespace ApiTest.GOshopAPI {
             set {
                 this.messageField = value;
                 this.RaisePropertyChanged("Message");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string BaseEAN {
+            get {
+                return this.baseEANField;
+            }
+            set {
+                this.baseEANField = value;
+                this.RaisePropertyChanged("BaseEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string BaseSKU {
+            get {
+                return this.baseSKUField;
+            }
+            set {
+                this.baseSKUField = value;
+                this.RaisePropertyChanged("BaseSKU");
             }
         }
         
@@ -1856,6 +1891,8 @@ namespace ApiTest.GOshopAPI {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
     public partial class Product : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private int productIdField;
+        
         private System.Nullable<int> producerIdField;
         
         private ProductProducer producerField;
@@ -1865,6 +1902,8 @@ namespace ApiTest.GOshopAPI {
         private ProductOption[] optionsListField;
         
         private decimal weightField;
+        
+        private decimal taxRateField;
         
         private string baseSKUField;
         
@@ -1879,7 +1918,19 @@ namespace ApiTest.GOshopAPI {
         private System.Nullable<int> availabilityStateField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public System.Nullable<int> ProducerId {
             get {
                 return this.producerIdField;
@@ -1891,7 +1942,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public ProductProducer Producer {
             get {
                 return this.producerField;
@@ -1903,7 +1954,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
         public ProductImage[] ImagesList {
             get {
                 return this.imagesListField;
@@ -1915,7 +1966,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
         public ProductOption[] OptionsList {
             get {
                 return this.optionsListField;
@@ -1927,7 +1978,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public decimal Weight {
             get {
                 return this.weightField;
@@ -1939,7 +1990,19 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal TaxRate {
+            get {
+                return this.taxRateField;
+            }
+            set {
+                this.taxRateField = value;
+                this.RaisePropertyChanged("TaxRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string BaseSKU {
             get {
                 return this.baseSKUField;
@@ -1951,7 +2014,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string BaseEAN {
             get {
                 return this.baseEANField;
@@ -1963,7 +2026,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string Name {
             get {
                 return this.nameField;
@@ -1975,7 +2038,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public bool Active {
             get {
                 return this.activeField;
@@ -1987,7 +2050,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string ShortDescription {
             get {
                 return this.shortDescriptionField;
@@ -1999,7 +2062,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
         public System.Nullable<int> AvailabilityState {
             get {
                 return this.availabilityStateField;
@@ -2264,6 +2327,10 @@ namespace ApiTest.GOshopAPI {
         
         private System.Nullable<int> producerIdField;
         
+        private string baseEANField;
+        
+        private string baseSKUField;
+        
         private System.Nullable<bool> includeProductImagesField;
         
         private System.Nullable<bool> includeProductOptionsField;
@@ -2299,7 +2366,31 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string BaseEAN {
+            get {
+                return this.baseEANField;
+            }
+            set {
+                this.baseEANField = value;
+                this.RaisePropertyChanged("BaseEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string BaseSKU {
+            get {
+                return this.baseSKUField;
+            }
+            set {
+                this.baseSKUField = value;
+                this.RaisePropertyChanged("BaseSKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public System.Nullable<bool> IncludeProductImages {
             get {
                 return this.includeProductImagesField;
@@ -2311,7 +2402,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public System.Nullable<bool> IncludeProductOptions {
             get {
                 return this.includeProductOptionsField;
@@ -2323,7 +2414,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public System.Nullable<bool> Active {
             get {
                 return this.activeField;
@@ -2335,7 +2426,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public int PageSize {
             get {
                 return this.pageSizeField;
@@ -2347,7 +2438,7 @@ namespace ApiTest.GOshopAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public int Page {
             get {
                 return this.pageField;
@@ -2837,6 +2928,168 @@ namespace ApiTest.GOshopAPI {
             set {
                 this.eANField = value;
                 this.RaisePropertyChanged("EAN");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class ProductTraitToValue : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string baseEANField;
+        
+        private string baseSKUField;
+        
+        private string traitValueField;
+        
+        private int productIdField;
+        
+        private string traitNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string BaseEAN {
+            get {
+                return this.baseEANField;
+            }
+            set {
+                this.baseEANField = value;
+                this.RaisePropertyChanged("BaseEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string BaseSKU {
+            get {
+                return this.baseSKUField;
+            }
+            set {
+                this.baseSKUField = value;
+                this.RaisePropertyChanged("BaseSKU");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string TraitValue {
+            get {
+                return this.traitValueField;
+            }
+            set {
+                this.traitValueField = value;
+                this.RaisePropertyChanged("TraitValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int ProductId {
+            get {
+                return this.productIdField;
+            }
+            set {
+                this.productIdField = value;
+                this.RaisePropertyChanged("ProductId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string TraitName {
+            get {
+                return this.traitNameField;
+            }
+            set {
+                this.traitNameField = value;
+                this.RaisePropertyChanged("TraitName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://goshop.pl/soapapi")]
+    public partial class TraitQuery : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int pageField;
+        
+        private int pageSizeField;
+        
+        private string baseEANField;
+        
+        private string baseSKUField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int Page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("Page");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int PageSize {
+            get {
+                return this.pageSizeField;
+            }
+            set {
+                this.pageSizeField = value;
+                this.RaisePropertyChanged("PageSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string BaseEAN {
+            get {
+                return this.baseEANField;
+            }
+            set {
+                this.baseEANField = value;
+                this.RaisePropertyChanged("BaseEAN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string BaseSKU {
+            get {
+                return this.baseSKUField;
+            }
+            set {
+                this.baseSKUField = value;
+                this.RaisePropertyChanged("BaseSKU");
             }
         }
         
@@ -3527,6 +3780,14 @@ namespace ApiTest.GOshopAPI {
         
         public System.Threading.Tasks.Task TraitsUpdateAsync(ApiTest.GOshopAPI.TraitUpdateStruct request) {
             return base.Channel.TraitsUpdateAsync(request);
+        }
+        
+        public ApiTest.GOshopAPI.ProductTraitToValue[] TraitsList(ApiTest.GOshopAPI.TraitQuery filter) {
+            return base.Channel.TraitsList(filter);
+        }
+        
+        public System.Threading.Tasks.Task<ApiTest.GOshopAPI.ProductTraitToValue[]> TraitsListAsync(ApiTest.GOshopAPI.TraitQuery filter) {
+            return base.Channel.TraitsListAsync(filter);
         }
         
         public ApiTest.GOshopAPI.ProductOption[] OptionsList(ApiTest.GOshopAPI.OptionQuery filter) {

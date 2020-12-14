@@ -108,6 +108,9 @@
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductToCategory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductTraitToValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\GOshopAPI\ApiTest.GOshopAPI.ProductUpdateResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

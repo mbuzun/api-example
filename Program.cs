@@ -17,7 +17,7 @@ namespace ApiTest
 
             var service = new GOshopAPISoapClient();
 
-            //service.Endpoint.Address = new EndpointAddress("http://localhost:64019/Api.asmx");
+            //service.Endpoint.Address = new EndpointAddress("https://www.sklepdemo.pl/Api.asmx");
             using (new OperationContextScope(service.InnerChannel))
             {
 
@@ -458,7 +458,7 @@ namespace ApiTest
                 Weight = 0.05m,
                 FullHtmlDescription = "Full description <b>with html</b>",
                 ShortDescription = "test short descriptions",
-                CategoryId = new [] { 26, 18 }
+                CategoryId = new[] { 26, 18 }
             });
             var catalogPrice = new Random(new Random().Next()).NextDecimal(1000, 5000);
             var grossPrice = new Random(new Random().Next()).NextDecimal(1000, 5000);
@@ -498,7 +498,6 @@ namespace ApiTest
                 }
             }
         }
-
         private static void Orders(GOshopAPISoapClient service)
         {
 
